@@ -1,0 +1,131 @@
+/* =========================
+   Timeline centrée & alternée
+   ========================= */
+.timeline{
+  width: min(1100px, 100%);
+  margin: 8px auto 0 auto;
+  position: relative;
+  display: grid;
+  grid-auto-rows: auto;
+  row-gap: 22px;
+  padding: 10px 0;
+}
+.timeline::before{
+  content:"";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-1px);
+  width: 2px;
+  background: var(--border-strong);
+  pointer-events: none;
+}
+.tl-item{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: start;
+  column-gap: 24px;
+  padding-block: 2px;
+}
+
+.tl-card{ grid-column: 1; }
+.tl-item:nth-child(even) .tl-card{ grid-column: 3; }
+
+.tl-card{
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tl-card:hover{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ffffff;
+}
+.tl-header{
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  padding: 6px 4px;
+}
+.tl-chev{
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform .18s ease;
+  transform-origin: 50% 55%;
+}
+.tl-header[aria-expanded="true"] .tl-chev{ transform: rotate(90deg); }
+.tl-title{ margin: 0; font-size: 1.05rem; }
+.tl-meta{ color: var(--muted); font-size: .9rem; }
+.tl-panel{
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  background: var(--card-bg);
+}
+.tl-list{ margin: 0; padding-left: 16px; }
+
+@media (max-width: 700px){
+  .tl-item{ grid-template-columns: 1fr 32px 0; column-gap: 16px; }
+  .tl-item:nth-child(even) .tl-card{ grid-column: 1; }
+}
+
+/* logos + reveal latéral */
+.tl-logo { width:40px; height:40px; object-fit:contain; opacity:.9; margin-right:6px; }
+.tl-item { opacity: 0; transform: translateX(0); transition: opacity .45s ease, transform .45s ease; }
+.tl-item.reveal-left  { opacity:1; transform: translateX(-14px); }
+.tl-item.reveal-right { opacity:1; transform: translateX(14px); }
+
+
+/* === Accordéon PRO (sans max-height, donc sans snap) === */
+.tl-panel{
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+
+  /* animation */
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    grid-template-rows 420ms cubic-bezier(.2,.9,.2,1),
+    opacity 220ms ease,
+    transform 220ms ease;
+  will-change: grid-template-rows, opacity, transform;
+
+  /* fermé = pas cliquable */
+  pointer-events: none;
+}
+
+/* IMPORTANT : l’intérieur doit être overflow hidden pour que le 0fr masque */
+.tl-panel > .tl-panel-inner{
+  overflow: hidden;
+  padding: 10px; /* ton ancien padding */
+}
+
+/* ouvert */
+.tl-panel[data-open="true"]{
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.tl-panel[data-open="false"]{ 
+  padding-top: 0px;   
+  padding-bottom: 0px;   
+  border-width: 0px; 
+} 

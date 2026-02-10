@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <title>Portfolio — Accueil</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+  <link rel="stylesheet" href="css/carousel.css" />
+  <link rel="stylesheet" href="css/timeline.css" />
+  <link rel="stylesheet" href="css/bento.css" />
+</head>
+<body>
+  <header class="pub-topbar" role="banner">
+    <div class="crumbs" aria-label="Fil d’Ariane">
+      <a href="../index.html" data-en="~/Home">~/Accueil</a>
+      <span class="sep">/</span>
+      <span class="here" data-en="Publications">Publications</span>
+    </div>
+
+    <button id="langPush" class="lang-push" aria-label="Changer de langue" type="button">
+      <span class="stack" aria-hidden="true">
+        <span class="inner">
+          <span class="row" id="lpRow1"><span class="material-symbols-outlined lang-ico">translate</span></span>
+          <span class="row" id="lpRow2">ang</span>
+        </span>
+      </span>
+    </button>
+  </header>
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Barre latérale">
+      <div class="sidebar-header">
+        <button class="ghost icon-btn" id="toggleSidebar" aria-label="Replier la sidebar"></button>
+        <div class="brand" title="Tahiri Yassine">
+        </div>
+      </div>
+      <div class="sidebar-body">
+        <nav class="card nav-card" aria-label="Navigation">
+          <a class="nav-link" href="index.html" ><i class="fas fa-house" ></i>  <span data-en="Home">Accueil</span></a>
+          <a class="nav-link" href="competences.html"><i class="fas fa-brain"></i> <span data-en="Skills">Compétences</span></a>
+          <a class="nav-link" href="projets.html"><i class="fas fa-folder"></i> <span data-en="Projects">Projets</span></a>
+        </nav>
+        <div class="card nav-card">
+          <a class="nav-link" href="mailto:yassinetahiri.pro@gmail.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-envelope"></i> <span>Email</span></a>
+          <a class="nav-link" href="https://www.linkedin.com/in/yassine-t/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+          <a class="nav-link" href="https://github.com/YassineT-git" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> <span>GitHub</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main>
+      <div class="container">
+        <header class="hero">
+          <div class="hero-top">
+            <div>
+              <h1 data-en="Welcome to my Portfolio">Bienvenue sur mon Portfolio</h1>
+              <p data-en="Student in computer science — development, networking & cybersecurity. Focus on quality & UX.">Étudiant en informatique — développement, réseaux & cybersécurité. Focus qualité & UX.</p>
+              <div class="cta">
+                <a class="btn" href="assets/CV_Yassine.pdf" target="_blank" rel="noopener" data-en="Download my CV">Télécharger mon CV</a>
+                <a class="btn btn-ghost" href="mailto:yassinetahiri.pro@gmail.com" data-en="Contact me">Me contacter</a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Timeline alternée centrée -->
+        <!-- Expériences professionnelles -->
+        <section class="section" aria-labelledby="exp-title">
+          <h2 id="exp-title" data-en="Professional Experiences">Expériences professionnelles</h2>
+          <div class="timeline" id="experience-timeline">
+
+            <!-- Experience 1 -->
+            <article class="tl-item" data-direction="left">
+              <div class="tl-card">
+                <button class="tl-header" aria-expanded="false" data-target="exp1">
+                  <span class="tl-chev" aria-hidden="true">›</span>
+                  <h3 class="tl-title" data-en="Project Manager Assistant">Assistant chef de projet</h3>
+                  <img class="tl-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Fond_blanc.svg" alt="" aria-hidden="true" />
+                  <span class="tl-meta">Novatine <br>2024-2025 · Île-de-France</span>
+                </button>
+                <div class="tl-panel" id="exp1" hidden>
+                  <ul class="tl-list">
+                    <li data-en="Coordination of the deployment of a Data Loss Prevention (DLP) solution within three subsidiaries.">Coordination du déploiement d'une solution de Data Loss Prevention (DLP) au sein de trois filiales.</li>
+                    <li data-en="Development and follow-up of the deployment schedule, ensuring adherence to deadlines.">Élaboration et suivi du planning de déploiement, garantissant le respect des délais.</li>
+                    <li data-en="Collaboration with technical teams to ensure smooth integration of the DLP solution.">Collaboration avec les équipes techniques pour assurer une intégration fluide de la solution DLP.</li>
+                    <li data-en="Organization of daily meetings with technical teams to ensure effective follow-up.">Organisation de réunions quotidiennes avec les équipes techniques pour assurer un suivi efficace.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Experience 2 -->
+            <article class="tl-item" data-direction="right">
+              <div class="tl-card">
+                <button class="tl-header" aria-expanded="false" data-target="exp2">
+                  <span class="tl-chev" aria-hidden="true">›</span>
+                  <h3 class="tl-title" data-en="Cybersecurity Intern">Stagiaire en Cybersécurité </h3>
+                  <img class="tl-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Fond_blanc.svg" alt="" aria-hidden="true" />
+                  <span class="tl-meta">Open BPO <br> Été 2023 · Île-de-France</span>
+                </button>
+                <div class="tl-panel" id="exp2" hidden>
+                  <ul class="tl-list">
+                    <li data-en="Participation in the deployment of an EDR solution in a professional environment.">Participation au déploiement d’une solution EDR dans un environnement professionnel.</li>
+                    <li data-en="Participation in the drafting of technical documents detailing deployment steps and best practices for EDR usage.">Participation à la rédaction de documents techniques détaillant les étapes de déploiement et les bonnes pratiques pour l’utilisation de l’EDR.</li>
+                    <li data-en="Contribution to the drafting of an FAQ on EDRs.">Contribution à la rédaction d’une FAQ sur les EDR</li>
+                    <li data-en="Participation in troubleshooting (after post deployment blocking).">Participation au Troubleshooting (après le blocage des postes déployés).</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Experience 3 -->
+            <article class="tl-item" data-direction="left">
+              <div class="tl-card">
+                <button class="tl-header" aria-expanded="false" data-target="exp3">
+                  <span class="tl-chev" aria-hidden="true">›</span>
+                  <h3 class="tl-title" data-en="AI Trainer">Formateur en Intelligence Artificielle</h3>
+                  <img class="tl-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Fond_blanc.svg" alt="" aria-hidden="true" />
+                  <span class="tl-meta">OSM'OZ <br> Été 2023 · Île-de-France</span>
+                </button>
+                <div class="tl-panel" id="exp3" hidden>
+                  <ul class="tl-list">
+                    <li data-en="Creation of an AI training module (Games, Quiz, FAQ).">Création d’un module de formation sur l’IA (Jeux, Quiz, FAQ).</li>
+                    <li data-en="Animation of the training modules.">Animation des modules de formation.</li>
+                    <li data-en="Creation of an AI training module.">Création d’un module de formation sur l’IA.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Experience 4 -->
+            <article class="tl-item" data-direction="right">
+              <div class="tl-card">
+                <button class="tl-header" aria-expanded="false" data-target="exp4">
+                  <span class="tl-chev" aria-hidden="true">›</span>
+                  <h3 class="tl-title" data-en="Mathematics Teacher">Professeur de mathématiques</h3>
+                  <img class="tl-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Fond_blanc.svg" alt="" aria-hidden="true" />
+                  <span class="tl-meta" data-en="Independent<br>2022 - Present">Indépendant<br> 2022 - Présent</span>
+                </button>
+                <div class="tl-panel" id="exp4" hidden>
+                  <ul class="tl-list">
+                    <li data-en="Development of an internal application in React and Node.js.">Développement de l'application interne en React et Node.js.</li>
+                    <li data-en="Database management and cloud deployment.">Gestion de base de données et déploiement cloud.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Bento Grid -->
+        <section class="section">
+          <h2 data-en="About me — in brief">À propos — en bref</h2>
+          <div class="bento">
+            <div class="bento-item bento-lg card reveal" data-span="2">
+              <h3 data-en="Who am I?">Qui suis-je ?</h3>
+              <p data-en="I am a versatile developer, focused on quality and UX, with a strong interest in cybersecurity and system administration.">Développeur polyvalent, orienté qualité & UX, avec un fort intérêt pour la cybersécurité et l’admin système.</p>
+            </div>
+            <div class="bento-item bento-tall card reveal" data-span="1">
+              <h3 data-en="Language Levels">Niveaux de langues</h3>
+              <ul class="pills">
+                <li class="pill"><span> Français — natif </span></li>
+                <li class="pill"><span> Anglais — B2/C1 </span></li>
+                <li class="pill"><span> Espagnol — A2 </span></li>
+              </ul>
+            </div>
+            <div class="bento-item card reveal" data-span="1">
+              <h3 data-en="Strengths">Forces</h3>
+              <ul class="checklist">
+                <li data-en="Rational & rigorous">Rationnel & rigoureux</li>
+                <li data-en="Autonomous & organized">Autonome & organisé</li>
+                <li data-en="Curious (research & prototypes)">Curieux (veille & protos)</li>
+              </ul>
+            </div>
+            <div class="bento-item bento-wide card reveal" data-span="2">
+              <h3 data-en="Objective">Objectif</h3>
+              <p data-en="Internship in cybersecurity / SRE / DevOps to consolidate my network & system foundations.">Alternance en <strong>cybersécurité / SRE / DevOps</strong> pour consolider mes bases réseaux & systèmes.</p>
+            </div>
+            <div class="bento-item card reveal" data-span="1">
+              <h3 data-en="Soft skills">Soft skills</h3>
+              <p data-en="Team spirit, attention to detail, clear communication.">Esprit d’équipe, sens du détail, communication claire.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section" aria-labelledby="cv-title">
+          <h2 id="cv-title" data-en="My career">Mon parcours</h2>
+
+          <div class="timeline" id="timeline">
+            <!-- Item 1 -->
+            <article class="tl-item" data-direction="left">
+              <div class="tl-card">
+                <button class="tl-header" aria-expanded="false" data-target="tl2">
+                  <span class="tl-chev" aria-hidden="true">›</span>
+                  <img class="tl-logo" src="https://iramis.cea.fr/wp-content/uploads/2016/03/logoUnivParisSaclay.png" alt="" aria-hidden="true">
+                  <h3 class="tl-title" data-en="BSc Computer Science — IUT d’Orsay">Bachelor Informatique — IUT d’Orsay</h3>
+                  <span class="tl-meta" data-en="2023 — Today · Paris-Saclay">2023 — Présent · Paris-Saclay</span>
+                </button>
+                <div class="tl-panel" id="tl2" hidden>
+                  <ul class="tl-list">
+                    <li data-en=""> De nombreuses comptetences techniques et sociales</li>
+                    <li data-en=""> Des projets informatique tout seul ou à plusieurs</li>
+                    <br>
+                    <a class=btn href="../Portfolio/projets.html" data-en="See More Projects"> Voir + de projets </a>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 2 -->            
+             <article class="tl-item" data-direction="right">
+              <div class="tl-card">
+                <button class="tl-header" aria-expanded="false" data-target="tl3">
+                  <span class="tl-chev" aria-hidden="true">›</span>
+                  <img class="tl-logo" src="https://media.licdn.com/dms/image/v2/D4E0BAQEINSZsNvmKiQ/company-logo_200_200/company-logo_200_200/0/1704974730729/lycee_general_et_technologique_de_villaroy_logo?e=2147483647&v=beta&t=KpAWnUE6wqrLtauHdOyFj181fHjVUxG7Bi_bH5EkutQ" alt="" aria-hidden="true">
+                  <h3 class="tl-title" data-en="Baccalaureate general">Baccalauréat général</h3>
+                  <span class="tl-meta" data-en="2021 — 2024 · Lycée of Villaroy">2021 — 2024 · Lycée de Villaroy</span>
+                </button>
+                <div class="tl-panel" id="tl3" hidden>
+                  <ul class="tl-list">
+                    <li data-en="Option Mathematics.">Option Mathématiques expertes.</li>
+                    <li data-en="Speciality Mathematics.">Spécialités Mathématiques.</li>
+                    <li data-en="Speciality computer science.">Spécialités Numérique Science Informatique (NSI).</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Carrousel -->
+        <section class="section" aria-labelledby="carousel-title">
+          <h2 id="carousel-title" data-en="Technos & tools">Technos & outils</h2>
+          <div class="carousel" id="logoCarousel" aria-roledescription="carrousel" aria-label="Logos de technologies">
+            <div class="track">
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Logo Java"></a><span>Java</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Logo HTML"></a><span>HTML</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="Logo C++"></a><span>C++</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Logo JavaScript"></a><span>JavaScript</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Logo Python"></a><span>Python</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="Logo C#"></a><span>C#</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Logo Oracle"></a><span>Oracle</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Logo PostgreSQL"></a><span>MySQL</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="Logo VS Code"></a><span>VS Code</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="Logo IntelliJ IDEA"></a><span>IntelliJ</span></div>
+              <div class="slide"><a href="competences.html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" alt="Logo PyCharm"></a><span>PyCharm</span></div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <small>Made with <i class="fas fa-heart" style="color: red; font-size: 1em;"></i> by  Yassine. T </small>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="js/main.js" defer></script>  
+  <script src="../Publications/js/publications.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<html lang="fr">
+  <head>
+  <!DOCTYPE html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <title>Portfolio — Compétences</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="css/competences.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="pub-topbar" role="banner">
+    <div class="crumbs" aria-label="Fil d’Ariane">
+      <a href="../index.html">~/Accueil</a>
+      <span class="sep">/</span>
+      <a href="index.html">Portfolio</a>
+      <span class="sep">/</span>
+      <span class="here">Compétences</span>
+    </div>    
+    <button id="langPush" class="lang-push" aria-label="Changer de langue" type="button">
+      <span class="stack" aria-hidden="true">
+        <span class="inner">
+          <span class="row" id="lpRow1"><span class="material-symbols-outlined lang-ico">translate</span></span>
+          <span class="row" id="lpRow2">ang</span>
+        </span>
+      </span>
+    </button>
+  </header>
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Barre latérale">
+      <div class="sidebar-header">
+        <button class="ghost icon-btn" id="toggleSidebar" aria-label="Replier la sidebar"></button>
+        <div class="brand" title="Yassine TAHIRI">
+        </div>
+      </div>
+      <div class="sidebar-body">
+        <nav class="card nav-card" aria-label="Navigation">
+          <a class="nav-link" href="index.html"><i class="fas fa-house"></i> <span>Accueil</span></a>
+          <a class="nav-link" href="competences.html"><i class="fas fa-brain"></i> <span>Compétences</span></a>
+          <a class="nav-link" href="projets.html"><i class="fas fa-folder"></i> <span>Projets</span></a>
+        </nav>
+        <div class="card nav-card">
+          <a class="nav-link" href="mailto:yassinetahiri.pro@gmail.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-envelope"></i> <span>Email</span></a>
+          <a class="nav-link" href="https://www.linkedin.com/in/yassine-t/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+          <a class="nav-link" href="https://github.com/YassineT-git" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> <span>GitHub</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Contenu -->
+    <main>
+      <div class="container">
+        <header class="hero">
+          <h1>Compétences</h1>
+          <p>Un aperçu des technologies que j’utilise au quotidien — avec mon niveau et des exemples d’usage.</p>
+        </header>
+
+        <!-- Filtres (sélection unique) -->
+        <section class="section">
+          <div class="filter-bar" role="group" aria-label="Filtres de compétences">
+            <button class="filter-chip active" data-filter="*">Tous</button>
+            <button class="filter-chip" data-filter="langage">Langages</button>
+            <button class="filter-chip" data-filter="framework">Frameworks</button>
+            <button class="filter-chip" data-filter="ide">IDE</button>
+            <button class="filter-chip" data-filter="base">Bases</button>
+            <button class="filter-chip" data-filter="outil">Outils</button>
+            <button class="filter-chip" data-filter="systeme">Systèmes</button>
+            <button class="filter-chip" data-filter="devops">DevOps</button>
+            <button class="filter-chip" data-filter="frontend">Frontend</button>
+            <button class="filter-chip" data-filter="backend">Backend</button>
+          </div>
+        </section>
+
+        <!-- Grille des compétences -->
+        <section class="section" aria-live="polite">
+          <div class="skill-grid">
+            <!-- Langages -->
+            <article class="skill-card" data-tags="langage,backend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Java — langage orienté objet"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+                <div>
+                  <h3 class="skill-title">Java</h3>
+                  <div class="mini-tags"><span>Langage</span><span>Backend</span></div>
+                </div>
+              </div>
+              <p class="skill-text">POO, collections, I/O, threads; apps console & desktop; bases Spring; tests JUnit.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage,frontend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo HTML — langage de balisage"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                <div>
+                  <h3 class="skill-title">HTML</h3>
+                  <div class="mini-tags"><span>Langage</span><span>Frontend</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Langage de balisage pour structurer le contenu web.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage,frontend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo CSS — langage de style"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                <div>
+                  <h3 class="skill-title">CSS</h3>
+                  <div class="mini-tags"><span>Langage</span><span>Frontend</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Langage de style pour embellir le contenu web.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage,frontend,backend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo JavaScript — langage web"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                <div>
+                  <h3 class="skill-title">JavaScript</h3>
+                  <div class="mini-tags"><span>Langage</span><span>Front</span><span>Back</span></div>
+                </div>
+              </div>
+              <p class="skill-text">DOM, fetch, modules ES, tooling (npm). Usage côté client et Node.js côté serveur.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Python — scripting"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+                <div>
+                  <h3 class="skill-title">Python</h3>
+                  <div class="mini-tags"><span>Langage</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Scripts, automatisation, Flask simple, data utils; focus sur lisibilité et tests.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage,backend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo C# — WPF & .NET"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">
+                <div>
+                  <h3 class="skill-title">C#</h3>
+                  <div class="mini-tags"><span>Langage</span><span>Backend</span></div>
+                </div>
+              </div>
+              <p class="skill-text">WPF MVVM (desktop), bases ASP.NET, LINQ; patterns et propreté du code.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage,backend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo C++ — langage système"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
+                <div>
+                  <h3 class="skill-title">C++</h3>
+                  <div class="mini-tags"><span>Language</span><span>Backend</span></div>
+                </div>
+              </div>
+              <p class="skill-text">POO, STL, templates, mémoire dynamique; applications système et performances.</p>
+            </article>
+
+            <article class="skill-card" data-tags="langage,backend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo C - langage système"
+                     src="https://cdn.jsdelivr.net/npm/@programming-languages-logos/c@0.0.3/c.svg">
+                <div>
+                  <h3 class="skill-title">C</h3>
+                  <div class="mini-tags"><span>Language</span><span>Backend</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Langage système, compilation, pointeurs, structures; applications système et performances.</p>
+            </article>
+
+            <article class="skill-card" data-tags="framework,frontend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo PHP"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+                <div>
+                  <h3 class="skill-title">PHP</h3>
+                  <div class="mini-tags"><span>Framework</span><span>Front</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Système de templating, gestion des sessions, intégration avec base de données.</p>
+            </article>
+
+            <!-- IDE -->
+            <article class="skill-card" data-tags="ide">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo VS Code — IDE"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+                <div>
+                  <h3 class="skill-title">VS Code</h3>
+                  <div class="mini-tags"><span>IDE</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Paramétrage productif (extensions, snippets), debug JS/TS, intégration Git fluide.</p>
+            </article>
+
+            <article class="skill-card" data-tags="ide">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo IntelliJ — IDE Java"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg">
+                <div>
+                  <h3 class="skill-title">IntelliJ IDEA</h3>
+                  <div class="mini-tags"><span>IDE</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Refactoring, inspections, build Gradle/Maven; confort pour projets Java/Spring.</p>
+            </article>
+
+            <article class="skill-card" data-tags="ide">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Eclipse — IDE Java"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg">
+                <div>
+                  <h3 class="skill-title">Eclipse</h3>
+                  <div class="mini-tags"><span>IDE</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Java Swing, gestion des projets Java.</p>
+            </article>
+
+            <article class="skill-card" data-tags="ide">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo PyCharm — IDE Python"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg">
+                <div>
+                  <h3 class="skill-title">PyCharm</h3>
+                  <div class="mini-tags"><span>IDE</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Environnements virtuels, debug, gestion des tests; outils intégrés data/web.</p>
+            </article>
+
+            <article class="skill-card" data-tags="base,backend">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Oracle — SGBD"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg">
+                <div>
+                  <h3 class="skill-title">Oracle</h3>
+                  <div class="mini-tags"><span>Bases</span><span>Back</span></div>
+                </div>
+              </div>
+              <p class="skill-text">PL/SQL (procédures, triggers), rôles/permissions; optimisation requêtes.</p>
+            </article>
+
+            <!-- Outils / Systèmes / DevOps -->
+
+            <article class="skill-card" data-tags="outil,devops">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Git — contrôle de version"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+                <div>
+                  <h3 class="skill-title">Git</h3>
+                  <div class="mini-tags"><span>Outils</span><span>DevOps</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Workflow feature-branch, rebase, PR; conventions de commits; CI de base.</p>
+            </article>
+
+            <article class="skill-card" data-tags="outil,devops">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo gitlab — contrôle de version"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg">
+                <div>
+                  <h3 class="skill-title">GitLab</h3>
+                  <div class="mini-tags"><span>Outils</span><span>DevOps</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Workflow feature-branch, rebase, PR; conventions de commits; CI de base.</p>
+            </article>
+
+
+            <article class="skill-card" data-tags="outil,devops">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo github — contrôle de version"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+                <div>
+                  <h3 class="skill-title">GitHub</h3>
+                  <div class="mini-tags"><span>Outils</span><span>DevOps</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Workflow feature-branch, rebase, PR; conventions de commits; CI de base.</p>
+            </article>
+
+            <article class="skill-card" data-tags="devops,outil">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Docker — conteneurisation"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+                <div>
+                  <h3 class="skill-title">Docker</h3>
+                  <div class="mini-tags"><span>DevOps</span><span>Outils</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Images légères, docker-compose, envs; conteneurisation d’apps web + DB.</p>
+            </article>
+
+            <article class="skill-card" data-tags="outil">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Figma — design"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+                <div>
+                  <h3 class="skill-title">Figma</h3>
+                  <div class="mini-tags"><span>Outils</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Design 
+                UI/UX, prototypage, collaboration en ligne.</p>
+            </article>
+
+            <article class="skill-card" data-tags="outil">
+              <div class="skill-head">
+
+                <img class="skill-logo" alt="Logo Latex — traitement de texte"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg">
+                <div>
+                  <h3 class="skill-title">Latex</h3>
+                  <div class="mini-tags"><span>Outils</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Rédaction de documents scientifiques et techniques avec LaTeX.</p>
+            </article>
+
+            <article class="skill-card" data-tags="systeme">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Windows — systèmes"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg">
+                <div>
+                  <h3 class="skill-title">Windows</h3>
+                  <div class="mini-tags"><span>Systèmes</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Ligne de commande, gestion services, scripts PowerShell; notions réseau (VLAN, routage).</p>
+            </article>
+
+            <article class="skill-card" data-tags="systeme">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Linux — systèmes"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+                <div>
+                  <h3 class="skill-title">Linux</h3>
+                  <div class="mini-tags"><span>Systèmes</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Ligne de commande, gestion services, scripts bash; notions réseau (VLAN, routage).</p>
+            </article>
+
+
+            <article class="skill-card" data-tags="systeme">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo macOS — systèmes"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg">
+                <div>
+                  <h3 class="skill-title">macOS</h3>
+                  <div class="mini-tags"><span>Systèmes</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Ligne de commande, gestion services, scripts bash; notions réseau (VLAN, routage).</p>
+            </article>
+
+            <article class="skill-card" data-tags="systeme">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Debian — systèmes"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg">
+                <div>
+                  <h3 class="skill-title">Debian</h3>
+                  <div class="mini-tags"><span>Systèmes</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Ligne de commande, gestion services, scripts bash; notions réseau (VLAN, routage).</p>
+            </article>
+
+            <article class="skill-card" data-tags="systeme">
+              <div class="skill-head">
+                <img class="skill-logo" alt="Logo Ubuntu — systèmes"
+                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg">
+                <div>
+                  <h3 class="skill-title">Ubuntu</h3>
+                  <div class="mini-tags"><span>Systèmes</span></div>
+                </div>
+              </div>
+              <p class="skill-text">Ligne de commande, gestion services, scripts bash; notions réseau (VLAN, routage).</p>
+            </article>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">
+        <small>Made with <i class="fas fa-heart" style="color: red; font-size: 1em;"></i> by  Yassine. T </small>
+      </footer>
+    </main>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

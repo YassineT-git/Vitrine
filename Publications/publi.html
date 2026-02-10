@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-en="Publications — Yassine T">Publications — Yassine T</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../Publications/css/publications.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- =========================
+       HEADER PUBLICATIONS (sticky)
+       ========================= -->
+  <header class="pub-topbar" role="banner">
+    <div class="crumbs" aria-label="Fil d’Ariane">
+      <a href="../index.html" data-en="~/Home">~/Accueil</a>
+      <span class="sep">/</span>
+      <span class="here" data-en="Publications">Publications</span>
+    </div>
+
+    <button id="langPush" class="lang-push" aria-label="Changer de langue" type="button">
+      <span class="stack" aria-hidden="true">
+        <span class="inner">
+          <span class="row" id="lpRow1"><span class="material-symbols-outlined lang-ico">translate</span></span>
+          <span class="row" id="lpRow2">ang</span>
+        </span>
+      </span>
+    </button>
+  </header>
+
+    <main class="pub-container">
+    <header class="pub-header">
+      <h1 data-en="Publications">Publications</h1>
+    </header>
+
+    <!-- =========================
+         ONGLET PRINCIPAL
+         ========================= -->
+    <nav class="pub-tabs" aria-label="Sections Publications">
+      <button class="tab is-active" type="button" data-tab="all" data-en="All">Tout</button>
+      <button class="tab" type="button" data-tab="teaching" data-en="Teaching">Enseignement</button>
+    </nav>
+
+    <!-- =========================
+         CONTENU : TOUT
+         ========================= -->
+    <section id="tab-all" class="tab-panel is-active" aria-live="polite">
+      <section id="pub-grid" class="pub-grid">
+
+        <!-- PROJET 1 -->
+        <article class="pub-card" data-cat="informatique">
+          <header>
+            <h3 data-en="Binary Search (Python)">La recherche dichotomique (Python)</h3>
+            <span class="tag" data-en="Computer Science">informatique</span>            
+            <span class="tag" data-en="Mathematics">Mathématiques</span>
+          </header>
+
+          <p class="resume"
+             data-en="Algorithm, pseudocode, termination proof, and Python implementation with complexity analysis.">
+            Algorithme, pseudo-code, preuve de terminaison et implémentation Python avec analyse de complexité.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="https://github.com/YassineT-git/Dichotomie/blob/main/Dichotomie.pdf" target="_blank" title="PDF">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/YassineT-git/dichotomie" target="_blank" rel="noopener" title="Code">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJET 2 -->
+        <article class="pub-card" data-cat="maths">
+          <header>
+            <h3 data-en="Levenshtein Distance (Python)">La distance de Levenshtein (Python)</h3>
+            <span class="tag" data-en="Mathematics">Mathématiques</span>
+            <span class="tag" data-en="Computer Science">Informatique</span>
+          </header>
+
+          <p class="resume"
+             data-en="Inequalities, auxiliary sequences, convergence and induction proofs with progressive exercises.">
+            Inégalités, suites auxiliaires, convergence et preuves par récurrence avec exercices progressifs.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="files/maths/suites-recurrence.pdf" title="PDF">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-ghost" href="files/maths/suites-recurrence.tex" title="Source LaTeX">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJET 3 -->
+        <article class="pub-card" data-cat="autres">
+          <header>
+            <h3 data-en="Prime Number Concentration">La concentration des nombres premiers</h3>
+            <span class="tag" data-en="Mathematics">Mathématiques</span>
+            <span class="tag" data-en="Computer Science">Informatique</span>
+          </header>
+
+          <p class="resume"
+             data-en="Critical analysis of ethical and scientific issues related to bio-enhancement and biotechnology.">
+            Analyse critique des enjeux éthiques et scientifiques liés à la bio-augmentation et aux biotechnologies.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="../Portfolio/assets/CV_Yassine.pdf" target="_blank" rel="noopener" title="PDF">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJET 4 -->
+        <article class="pub-card" data-cat="autres">
+          <header>
+            <h3 data-en="The Doppler Effect">L'effet de Doppler</h3>
+            <span class="tag" data-en="Mathematics">Mathématiques</span>
+            <span class="tag" data-en="Computer Science">Informatique</span>
+          </header>
+
+          <p class="resume"
+             data-en="Critical analysis of ethical and scientific issues related to bio-enhancement and biotechnology.">
+            Analyse critique des enjeux éthiques et scientifiques liés à la bio-augmentation et aux biotechnologies.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="../Portfolio/assets/CV_Yassine.pdf" target="_blank" rel="noopener" title="PDF">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+      </section>
+    </section>
+
+    <!-- =========================
+         CONTENU : ENSEIGNEMENT (sous-onglets)
+         ========================= -->
+    <section id="tab-teaching" class="tab-panel" aria-live="polite">
+
+      <nav class="subtabs" aria-label="Niveaux Enseignement">
+        <button class="subtab is-active" type="button" data-subtab="sec">Seconde</button>
+        <button class="subtab" type="button" data-subtab="prem">Première</button>
+        <button class="subtab" type="button" data-subtab="term">Terminale</button>
+      </nav>
+
+      <!-- ====== SECONDE ====== -->
+      <section id="subtab-sec" class="subtab-panel is-active">
+
+        <div class="chapter-sep">
+          <span class="chapter-title">Chapitre 1 : Fonctions</span>
+        </div>
+
+        <section class="pub-grid">
+          <article class="pub-card" data-cat="teaching" data-level="seconde" data-chapter="fonctions">
+            <header>
+              <h3>Fonctions — Synthèse + exercices</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Seconde</span>
+            </header>
+            <p class="resume">Définition, variations, lecture graphique + exos types.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/seconde/fonctions.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="pub-card" data-cat="teaching" data-level="seconde" data-chapter="fonctions">
+            <header>
+              <h3>Fonctions — Cours</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Seconde</span>
+            </header>
+            <p class="resume">Définition, exemples, méthodes.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/seconde/fonctions.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <div class="chapter-sep">
+          <span class="chapter-title">Chapitre 2 : Statistiques</span>
+        </div>
+
+        <section class="pub-grid">
+          <article class="pub-card" data-cat="teaching" data-level="seconde" data-chapter="stats">
+            <header>
+              <h3>Statistiques — Médiane, moyenne, quartiles</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Seconde</span>
+            </header>
+            <p class="resume">Méthodes + exercices corrigés.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/seconde/stats.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </section>
+
+      </section>
+
+      <!-- ====== PREMIERE ====== -->
+      <section id="subtab-prem" class="subtab-panel">
+
+        <div class="chapter-sep">
+          <span class="chapter-title">Chapitre 1 : Suites</span>
+        </div>
+
+        <section class="pub-grid">
+          <article class="pub-card" data-cat="teaching" data-level="premiere" data-chapter="suites">
+            <header>
+              <h3>Suites — arithmétiques & géométriques</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Première</span>
+            </header>
+            <p class="resume">Formules, interprétations, exos à thème.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/premiere/suites.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <div class="chapter-sep">
+          <span class="chapter-title">Chapitre 2 : Probabilités</span>
+        </div>
+
+        <section class="pub-grid">
+          <article class="pub-card" data-cat="teaching" data-level="premiere" data-chapter="probas">
+            <header>
+              <h3>Probabilités conditionnelles</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Première</span>
+            </header>
+            <p class="resume">Arbres, tableaux, Bayes + exos.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/premiere/probas.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </section>
+
+      </section>
+
+      <!-- ====== TERMINALE ====== -->
+      <section id="subtab-term" class="subtab-panel">
+
+        <div class="chapter-sep">
+          <span class="chapter-title">Chapitre 1 : Dérivation</span>
+        </div>
+
+        <section class="pub-grid">
+          <article class="pub-card" data-cat="teaching" data-level="terminale" data-chapter="derivee">
+            <header>
+              <h3>Dérivation — méthodes + applications</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Terminale</span>
+            </header>
+            <p class="resume">Tableaux de variations, optimisation, tangentes.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/terminale/derivee.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <div class="chapter-sep">
+          <span class="chapter-title">Chapitre 2 : Intégrales</span>
+        </div>
+
+        <section class="pub-grid">
+          <article class="pub-card" data-cat="teaching" data-level="terminale" data-chapter="integrales">
+            <header>
+              <h3>Intégrales — aire & primitives</h3>
+              <span class="tag">Enseignement</span>
+              <span class="tag">Terminale</span>
+            </header>
+            <p class="resume">Primitives, calculs, interprétation géométrique.</p>
+            <div class="actions">
+              <a class="btn" href="files/enseignement/terminale/integrales.pdf" title="PDF">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </section>
+
+      </section>
+
+    </section>
+
+    <footer class="footer">
+      <small><span>Made with <i class="fas fa-heart" style="color: red; font-size: 1em;"></i> by Yassine. T</span></small>
+    </footer>
+  </main>
+
+  <!-- JS -->
+  <script src="../Publications/js/publications.js"></script>
+</body>
+</html>

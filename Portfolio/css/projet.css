@@ -1,0 +1,414 @@
+/* =========================
+   Cartes projet + overlays
+   ========================= */
+/* Grille de projets, adaptable avec auto-fill et minmax pour des colonnes flexibles */
+.project-grid {
+  display: grid; /* Disposition en grille */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px; /* Espacement entre les éléments */
+  margin-top: 14px; /* Marge en haut de la grille */
+}
+
+/* Carte de projet, avec position relative pour éléments internes, style de fond, coins arrondis, ombre et transition */
+.project-card {
+  position: relative; /* Pour positionner les éléments enfants en absolu si besoin */
+  border-radius: 16px; /* Coins arrondis */
+  overflow: hidden; /* Masque tout dépassement intérieur */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Ombre douce */
+  border: 1px solid var(--border); /* Bordure */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour effet au survol */
+  cursor: pointer; /* Curseur pointeur pour indiquer qu'il est cliquable */
+}
+
+/* Effet lors du survol de la carte : translation vers le haut, légère mise à l'échelle, ombre plus prononcée, changement de bordure */
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01); /* Déplacement vers le haut et léger zoom */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* Ombrage plus marqué */
+  border-color: #FFFFFF; /* Changement de couleur de bordure */
+}
+
+/* Image dans la carte, occupe toute la largeur, hauteur fixée, couvre sans déformer, transition de l'opacité */
+.project-card img {
+  width: 100%; /* Pleine largeur */
+  height: 240px; /* Hauteur fixe */
+  object-fit: cover; /* Couvre sans déformer */
+  transition: opacity 0.4s ease; /* Transition d'opacité */
+  margin-bottom: 1rem;
+}
+
+/* Titre dans la carte, marges pour espacement */
+.project-card h3 { margin: 12px; }
+
+/* Mini-tags dans la carte, affichage flexible, avec espace entre eux, marges autour */
+.project-card .mini-tags {
+  display: flex; /* Disposition en ligne */
+  gap: 6px; /* Espace entre tags */
+  flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+  margin: 0 12px 12px; /* Marges autour */
+}
+
+/* Style individuel de chaque mini-tag, fond blanc, texte gris, ombre, coins arrondis, padding, bordure */
+.mini-tags span {
+  color: #757575; /* Couleur du texte */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Ombre subtile */
+  border-radius: 999px; /* Coins très arrondis, style pill */
+  padding: 4px 8px; /* Padding interne */
+  font-size: 0.85rem; /* Taille de police */
+  border: 1px solid var(--border); /* Bordure */
+}
+
+
+/* Section toggle, style de fond, padding, bordure, coins arrondis, gras, curseur, marges, transition, position relative et padding à droite pour l'icône */
+.toggle-section {
+  padding: 10px 14px; /* Padding intérieur */
+  border: 0px solid var(--border-strong); /* Bordure */
+  border-radius: 12px; /* Coins arrondis */
+  font-weight: bold; /* Gras */
+  cursor: pointer; /* Curseur pointeur */
+  margin-bottom: 8px; /* Marge en dessous */
+  transition: all 0.2s ease; /* Transition pour tous les changements */
+  position: relative; /* Position pour l'icône pseudo-élément */
+  padding-right: 36px; /* Espace pour l'icône flèche */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* Ombrage plus marqué */
+
+}
+
+/* Changement de fond et de bordure au survol */
+.toggle-section:hover { 
+  transform: translateY(-3px) scale(1.001); /* Déplacement vers le haut et léger zoom */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Ombre douce */
+}
+
+/* Pseudo-élément après, contenu flèche, position absolue à droite, centré verticalement, transition pour rotation */
+.toggle-section::after{
+  content: "   ⟨"; /* Symbole flèche */
+  position: absolute; /* Position absolue */
+  right: 12px; /* À droite */
+  top: 50%; /* Centré verticalement */
+  transform: translateY(-50%) rotate(-90deg); /* Rotation normale */
+  transition: transform .2s ease; /* Transition pour rotation */
+}
+
+/* Rotation de la flèche quand section est ouverte */
+.toggle-section.open::after{ 
+  transform: translateY(-50%) rotate(-180deg); /* Rotation à 180° */
+}
+
+/* Style de l'overlay pour la modale */
+.project-modal-overlay {
+  position: fixed; /* Fixé à l'écran */
+  inset: 0; /* Pleine couverture */
+  backdrop-filter: blur(10px); /* Flou d'arrière-plan */
+  background: rgba(0, 0, 0, 0.3); /* Fond semi-transparent noir */
+  display: none; /* Caché par défaut */
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  z-index: 1000; /* Sur tous les autres éléments */
+}
+
+/* Activation de la modale (affichage en flex) */
+.project-modal-overlay.active { 
+  display: flex; 
+}
+
+/* Style principal de la modale */
+.project-modal {
+  background: #fff; /* Fond blanc */
+  border-radius: 20px; /* Coins arrondis */
+  padding: 24px; /* Padding intérieur */
+  max-width: 800px; /* Largeur max */
+  width: 90%; /* Largeur relative */
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25); /* Ombre prononcée */
+  position: relative; /* Position pour éléments internes */
+  height: 80vh; /* Limiter la hauteur à 80% de la hauteur de la fenêtre */
+  overflow: auto; /* Permettre de faire défiler le contenu si trop long */
+}
+
+/* Bouton de fermeture de la modale, positionné en haut à droite */
+.close-btn {
+  position: absolute; /* Absolu dans la modale */
+  top: 14px; /* En haut */
+  right: 16px; /* À droite */
+  font-size: 1.5rem; /* Taille de la police */
+  background: none; /* Sans fond */
+  border: none; /* Sans bordure */
+  cursor: pointer; /* Curseur pointeur */
+}
+
+/* Conteneur pour les onglets dans la modale */
+.modal-tabs {
+  display: flex; /* En ligne */
+  gap: 12px; /* Espacement entre onglets */
+  margin-bottom: 16px; /* Marge en dessous */
+}
+
+/* Style d'un onglet individuel */
+.modal-tabs .tab {
+  padding: 6px 14px; /* Padding interne */
+  border: 1px solid var(--border); /* Bordure */
+  border-radius: 999px; /* Bordures arrondies pour effet pill */
+  background: #f9fafb; /* Fond clair */
+  cursor: pointer; /* Curseur pointeur */
+}
+
+/* Onglet actif, fond coloré, texte blanc, bordure blanche */
+.modal-tabs .tab.active {
+  background: #000000; /* Bleu clair */
+  color: rgb(255, 255, 255); /* Texte blanc */
+  border-color: #000000; /* Bordure blanche */
+}
+
+/* Contenu des onglets, masqué par défaut */
+.tab-content { display: none; }
+/* Contenu actif, affiché */
+.tab-content.active { display: block; }
+
+/* Conteneur responsive pour iframe, ratio 16:9 */
+.responsive-iframe {
+  position: relative; /* Positionnement relatif pour contenir iframe */
+  width: 100%; /* Pleine largeur */
+  padding-bottom: 56.25%; /* Ratio 16:9 (hauteur proportionnelle) */
+  border: 1px solid var(--border); /* Bordure */
+  border-radius: 12px; /* Coins arrondis */
+  overflow: hidden; /* Masque tout dépassement */
+}
+
+/* Style de l'iframe pour qu'il remplisse le conteneur */
+.responsive-iframe iframe {
+  position: absolute; /* Absolu pour couvrir tout le conteneur */
+  inset: 0; /* Tout à 0 */
+  width: 100%; /* Pleine largeur */
+  height: 100%; /* Pleine hauteur */
+  border: 0; /* Sans bordure */
+}
+
+/* Bouton "Retour en haut" fixe en bas à droite, initialement caché */
+.back-to-top{
+  position: fixed; /* Fixé à l'écran */
+  right: 18px; /* À droite */
+  bottom: 18px; /* En bas */
+  z-index: 999; /* Sur tout le reste */
+  width: 42px; /* Largeur */
+  height: 42px; /* Hauteur */
+  border-radius: 999px; /* Forme ronde */
+  border: 1px solid var(--border-strong); /* Bordure */
+  background: #fff; /* Fond blanc */
+  box-shadow: var(--shadow); /* Ombre */
+  cursor: pointer; /* Curseur pointeur */
+  display: none; /* Caché par défaut */
+}
+
+/* Classe pour afficher le bouton */
+.back-to-top.show{ 
+  display: block; 
+}
+
+/* ===== Galerie dans l'onglet Description ===== */
+
+/* Grille pour afficher les images de la galerie */
+.gallery {
+  display: grid; /* Disposition en grille */
+  gap: 10px; /* Espacement entre images */
+}
+
+/* Conteneur principal de la galerie d'images, ratio 16:9, fond neutre */
+.gallery-main {
+  position: relative; /* Positionnement relatif pour les images internes */
+  width: 100%; /* Pleine largeur */
+  border: 1px solid var(--border); /* Bordure */
+  border-radius: 12px; /* Coins arrondis */
+  overflow: hidden; /* Masque dépassement */
+  aspect-ratio: 16 / 9; /* Ratio 16:9 responsive */
+  border-color: #fff;
+  background-color: #f0f0f0; /* Fond neutre */
+}
+
+/* Image principale dans la galerie, masquée sauf si active */
+.gallery-main img {
+  position: absolute; /* Absolu pour couvrir tout le conteneur */
+  inset: 0; /* Tout à 0 */
+  width: 100%; /* Pleine largeur */
+  height: 100%; /* Pleine hauteur */
+  object-fit: cover; /* Couvre sans déformer */
+  opacity: 0; /* Invisible par défaut */
+  transform: translateX(6px) scale(1.01); /* Légère translation et zoom pour effet */
+  transition: opacity .35s ease, transform .35s ease; /* Transitions fluides */
+}
+/* Image active, visible et centrée */
+.gallery-main img.is-active {
+  opacity: 1; /* Visible */
+  transform: translateX(0) scale(1); /* Retour à la position normale */
+}
+
+/* Flèches de navigation pour la galerie */
+.gallery-arrow {
+  position: absolute; /* Absolu dans .gallery-main */
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%); /* Ajustement pour centrage précis */
+  width: 38px; /* Largeur */
+  height: 38px; /* Hauteur */
+  border-radius: 999px; /* Forme ronde */
+  border: 1px solid var(--white ); /* Bordure */
+  background: rgba(255,255,255,.9); /* Fond semi-transparent */
+  display: grid; /* Centrage du contenu */
+  place-items: center; /* Centrer */
+  cursor: pointer; /* Curseur pointeur */
+  box-shadow: var(--shadow); /* Ombre */
+  user-select: none; /* Empêche la sélection du texte */
+}
+/* Changement de fond au survol */
+.gallery-arrow:hover { background: #fff; }
+/* Flèche gauche */
+.gallery-arrow.left  { left: 10px; }
+/* Flèche droite */
+.gallery-arrow.right { right: 10px; }
+/* Style du symbole dans la flèche */
+.gallery-arrow span { font-weight: 700; font-size: 18px; }
+
+/* Miniatures de la galerie, grille 6 colonnes, espace entre elles */
+.gallery-thumbs {
+  display: grid; /* Grille */
+  grid-template-columns: repeat(6, 1fr); /* 6 colonnes */
+  gap: 8px; /* Espacement */
+}
+/* Responsive en mobile : 4 colonnes */
+@media (max-width: 700px){
+  .gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
+}
+/* Style des boutons miniatures */
+.gallery-thumbs button {
+  position: relative; /* Position relative */
+  padding: 0; /* Aucune marge interne */
+  border: 1px solid var(--border); /* Bordure */
+  background: #fff; /* Fond blanc */
+  border-radius: 10px; /* Coins arrondis */
+  overflow: hidden; /* Masque les dépassements */
+  cursor: pointer; /* Curseur pointeur */
+  aspect-ratio: 16 / 9; /* Ratio pour uniformité */
+    box-shadow: 0 8px 18px rgba(0,0,0,.08); /* Ombre légère */
+
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; /* Transitions fluides */
+}
+/* Effet au survol des miniatures */
+.gallery-thumbs button:hover {
+  transform: translateY(-2px); /* Légère élévation */
+  border-color: #FFFFFF; /* Changement couleur bordure */
+  box-shadow: 0 8px 18px rgba(0,0,0,.08); /* Ombre légère */
+}
+/* Image miniature dans le bouton */
+.gallery-thumbs img {
+  width: 100%; height: 100%; object-fit: cover; display: block; /* Couvre sans déformer, bloc */
+}
+/* Indicateur actif sur la miniature sélectionnée */
+.gallery-thumbs button.is-active {
+  outline: 2px solid #000000; /* Bordure bleue pour indiquer sélection */
+  outline-offset: 2px; /* Décalage de la bordure */
+}
+
+
+.material-symbols-outlined.lang-ico{
+  /* taille visible */
+  font-size: 18px;        /* <- mets 18px ou 20px si tu veux plus grand */
+  line-height: 1;
+  display: inline-block;
+  color: var(--gris);
+
+  /* variations de la police (Material Symbols est une variable font) */
+  font-variation-settings:
+    'FILL' 0,             /* 0 = contour, 1 = plein */
+    'wght' 500,           /* poids : 300..700 */
+    'GRAD' 0,
+    'opsz' 18;            /* optical size ≈ taille en px */
+
+  /* petit calage vertical pour centrer visuellement */
+  vertical-align: -2px;
+}
+
+
+
+/* ===== Description : technos en bas ===== */
+#desc{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Bloc technos en bas */
+.desc-tech{
+  margin-top: auto;               /* pousse en bas */
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.10);
+
+  /* sticky si #desc (ou son parent) scroll */
+  position: sticky;
+  bottom: 0;
+
+  background: rgba(12,12,14,.70);
+  backdrop-filter: blur(10px);
+}
+
+/* Grille vignettes (tu l'avais déjà, je la remets propre) */
+.tech-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.tech-card{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.tech-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+}
+
+.tech-logoWrap{
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+  flex: 0 0 auto;
+}
+
+.tech-logo{
+  width: 26px;
+  height: 26px;
+}
+
+.tech-meta{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tech-name{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.tech-hint{
+  font-size: 12px;
+  opacity: .75;
+}
