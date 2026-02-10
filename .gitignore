@@ -1,19 +1,11 @@
-# Ignore les fichiers et dossiers temporaires
 *.log
 *.tmp
-
-# Ignore les fichiers de configuration de l'éditeur
 .idea/
 .vscode/
-
-# Ignore les fichiers de dépendances
 node_modules/
 vendor/
-
-# Ignore les fichiers compilés
 dist/
 build/
-
-# Ignore les fichiers systeme
 .DS_Store
 Thumbs.db
+.gitignore
