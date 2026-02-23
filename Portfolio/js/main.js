@@ -329,9 +329,14 @@ function setupProjectModal(){
           alt: "Logo Raspberry Pi — micro-ordinateur",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
         },
+      {
+          label: "MariaDB",
+          alt: "Logo MariaDB — base de données",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg"
+        },
       ],
       images: [
-        'assets/projets/p3/topo.jpg',
+        'assets/projets/p3/MariaDB.png',
         'assets/projets/p3/vlan.jpg'
       ]
     },

@@ -288,4 +288,48 @@ footer{
 }
 
 
+/* =========================
+   Mobile: sidebar toujours collapsed + fixe à gauche
+   ========================= */
+@media (max-width: 700px){
 
+  /* 1) Largeur compacte + marge gauche */
+  .app{
+    --sidebar-w: 78px;      /* ajuste: 72-90 selon ton goût */
+    --sidebar-gap: 12px;    /* marge entre le bord de l'écran et la sidebar */
+    --content-gap: 14px;    /* espace entre sidebar et contenu */
+  }
+
+  /* 2) Sidebar fixée correctement à gauche + un peu arrondie si tu veux */
+  .sidebar{
+    left: var(--sidebar-gap);
+    width: var(--sidebar-w);
+    padding: 12px;
+    border-radius: 16px;   /* optionnel */
+  }
+
+  /* 3) Le contenu se met à droite de la sidebar */
+  main{
+    margin-left: calc(var(--sidebar-w) + var(--sidebar-gap) + var(--content-gap));
+    padding: 18px;         /* plus compact sur mobile */
+  }
+
+  /* 4) Forcer l'affichage "collapsed" (icônes uniquement), même sans .collapsed */
+  .brand-text,
+  .nav-link span{
+    display: none !important;
+  }
+
+  /* 5) Nav: icônes centrées + zones cliquables propres */
+  .nav-link{
+    justify-content: center;
+    padding: 12px;         /* hit area tactile */
+    border-radius: 16px;
+  }
+
+  /* 6) Optionnel: cacher les éléments annexes en sidebar si tu en as */
+  .sidebar-item{
+    height: 0;
+    overflow: hidden;
+  }
+}
