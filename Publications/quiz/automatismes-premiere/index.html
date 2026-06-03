@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz en ligne — Automatismes de première</title>
+  <meta name="description" content="Quiz interactif de mathématiques pour travailler les automatismes de première : QCM, correction détaillée, schémas, statistiques et mode BAC." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav class="crumbs" aria-label="Fil d’Ariane">
+      <a href="../../../index.html">~/Accueil</a>
+      <span>/</span>
+      <a href="../../publi.html">Publications</a>
+      <span>/</span>
+      <strong>Quiz automatismes première</strong>
+    </nav>
+    <a class="back-link" href="../../publi.html">Retour enseignement</a>
+  </header>
+
+  <main>
+    <section class="hero" id="menu">
+      <div class="hero-content">
+        <p class="eyebrow">Mathématiques · Première · Automatismes</p>
+        <h1>Quiz en ligne complet sur les automatismes</h1>
+        <p class="lead">
+          Une banque de questions pour s’entraîner sans calculatrice : calcul numérique, calcul algébrique,
+          pourcentages, fonctions, statistiques, probabilités et défis de spécialité première.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-main" id="startBac" type="button">Lancer le mode BAC</button>
+          <button class="btn-soft" id="startAll" type="button">Grande séance mélangée</button>
+          <button class="btn-soft" id="startErrors" type="button">Refaire mes erreurs</button>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <span class="big-number">269</span>
+        <p>questions, dont une banque type BAC avec rendu LaTeX</p>
+        <div class="panel-line"><span>Mode BAC</span><strong>12 QCM · sans calculatrice</strong></div>
+        <div class="panel-line"><span>Correction</span><strong>explications + méthode</strong></div>
+        <div class="panel-line"><span>Suivi</span><strong>historique local</strong></div>
+      </aside>
+    </section>
+
+    <section class="info-grid" aria-label="Présentation du quiz">
+      <article>
+        <span class="icon-dot">01</span>
+        <h2>Menu par thèmes</h2>
+        <p>Choix d’un thème précis, d’un niveau de difficulté, du nombre de questions et du mode de correction.</p>
+      </article>
+      <article>
+        <span class="icon-dot">02</span>
+        <h2>Correction expliquée</h2>
+        <p>Chaque réponse affiche la bonne option, l’explication et la méthode à retenir pour automatiser le geste.</p>
+      </article>
+      <article>
+        <span class="icon-dot">03</span>
+        <h2>Schémas intégrés</h2>
+        <p>Graphiques de fonctions, diagrammes en barres, boîtes à moustaches, tableaux et arbres pondérés.</p>
+      </article>
+    </section>
+
+    <section class="config-card">
+      <div class="section-title">
+        <p class="eyebrow">Configuration</p>
+        <h2>Créer une séance personnalisée</h2>
+      </div>
+
+      <div class="domain-cards" id="domainCards" aria-label="Choix rapide du thème"></div>
+
+      <div class="settings-grid">
+        <label>
+          <span>Thème</span>
+          <select id="domainSelect"></select>
+        </label>
+        <label>
+          <span>Nombre de questions</span>
+          <select id="questionCount">
+            <option value="10">10 questions</option>
+            <option value="20" selected>20 questions</option>
+            <option value="30">30 questions</option>
+            <option value="40">40 questions</option>
+            <option value="60">60 questions</option>
+          </select>
+        </label>
+        <label>
+          <span>Difficulté</span>
+          <select id="difficultySelect">
+            <option value="mix" selected>Mélangée</option>
+            <option value="1">Niveau 1 · direct</option>
+            <option value="2">Niveau 2 · méthode</option>
+            <option value="3">Niveau 3 · défi</option>
+          </select>
+        </label>
+        <label class="toggle-line">
+          <input id="immediateToggle" type="checkbox" checked>
+          <span>Correction immédiate</span>
+        </label>
+      </div>
+
+      <div class="quiz-actions wrap left">
+        <button class="btn-main" id="startTraining" type="button">Lancer la séance personnalisée</button>
+        <button class="btn-soft" id="resetProgress" type="button">Réinitialiser le suivi</button>
+      </div>
+    </section>
+
+    <section class="program-card">
+      <div class="section-title">
+        <p class="eyebrow">Programme couvert</p>
+        <h2>Notions travaillées</h2>
+      </div>
+      <div class="program-grid">
+        <article>
+          <h3>Calcul numérique et algébrique</h3>
+          <p>Fractions, puissances, conversions, ordre de grandeur, calcul littéral, équations, inéquations et signe.</p>
+        </article>
+        <article>
+          <h3>Pourcentages et évolutions</h3>
+          <p>Proportions, coefficient multiplicateur, valeur initiale/finale, évolutions successives et réciproques.</p>
+        </article>
+        <article>
+          <h3>Fonctions et représentations</h3>
+          <p>Images, antécédents, équations graphiques, droites, coefficient directeur et lecture de variations.</p>
+        </article>
+        <article>
+          <h3>Statistiques</h3>
+          <p>Moyenne, médiane, quartiles, fréquences, diagrammes, boîtes à moustaches et comparaison de distributions.</p>
+        </article>
+        <article>
+          <h3>Probabilités</h3>
+          <p>Événement contraire, équiprobabilité, intersections, probabilités conditionnelles, tableaux et arbres pondérés.</p>
+        </article>
+        <article>
+          <h3>Défis spécialité première</h3>
+          <p>Suites, second degré, dérivation et exponentielle pour aller plus loin selon le programme de spécialité.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="history-card">
+      <div class="section-title">
+        <p class="eyebrow">Suivi</p>
+        <h2>Historique local</h2>
+      </div>
+      <div id="historyHost"></div>
+      <p class="tiny-note">Le suivi est stocké uniquement dans le navigateur de l’élève avec localStorage.</p>
+    </section>
+
+    <section id="quizZone" class="quiz-zone" aria-label="Zone du quiz">
+      <div class="empty-state">
+        <h2>Prêt à démarrer</h2>
+        <p>Choisis un mode dans le menu ci-dessus. Les raccourcis clavier A, B, C et D permettent de répondre plus vite.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Quiz interactif — Automatismes de première · Vitrine enseignement</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/auto-render.min.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
