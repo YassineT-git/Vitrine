@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA Impact | Outil de sensibilisation à l'impact environnemental de l'IA</title>
+  <meta name="description"
+    content="Estimez l'empreinte écologique de votre utilisation de l'IA générative : énergie, CO₂, eau. Un outil de sensibilisation basé sur des données publiques." />
+  <meta name="author" content="Projet Open Data University — defis.data.gouv.fr" />
+  <meta property="og:title" content="IA Impact — Calculateur d'empreinte environnementale de l'IA" />
+  <meta property="og:description"
+    content="Combien coûte votre usage de l'IA à la planète ? Estimez votre impact en énergie, CO₂ et eau." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="navbar__brand">
+        IA Impact<span class="navbar__brand-dot"></span>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="#simulateur">Simulateur</a></li>
+        <li><a href="#equivalences">Équivalences</a></li>
+        <li><a href="#comparaison">Comparaison</a></li>
+        <li><a href="#comprendre">Comprendre</a></li>
+      </ul>
+      <a href="#simulateur" class="navbar__cta">Estimer mon impact ↓</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container">
+      <span class="hero__badge">🌱 Défi data.gouv.fr — Impact environnemental de l'IA</span>
+      <h1 class="hero__title">
+        <span class="text-dim">Le coût caché</span><br>
+        de chaque <span class="text-accent">requête</span> IA
+      </h1>
+      <p class="hero__subtitle">
+        Estimez l'empreinte écologique de votre utilisation quotidienne
+        de l'IA générative — énergie, CO₂ et eau.
+      </p>
+      <div class="hero__cta-group">
+        <a href="#simulateur" class="btn btn--primary">Lancer le simulateur</a>
+        <a href="#comprendre" class="btn btn--outline">En savoir plus</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SIMULATEUR ============ -->
+  <section class="section" id="simulateur">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <h2 class="section__title">⚙️ Simulateur d'Impact</h2>
+        <p class="section__subtitle">Configurez votre usage et visualisez votre empreinte en temps réel</p>
+      </div>
+
+      <div class="simulator">
+        <!-- LEFT: Controls -->
+        <div class="simulator__controls card" data-animate>
+
+          <!-- Queries per day -->
+          <div class="control-group">
+            <label class="control-group__label" for="queries-slider">Nombre de requêtes par jour</label>
+            <div class="slider-container">
+              <input type="range" id="queries-slider" class="slider" min="1" max="500" value="10" step="1" />
+              <input type="number" id="queries-value" class="slider-value" value="10" min="1" max="500" />
+            </div>
+            <p class="control-group__hint">De 1 à 500 requêtes quotidiennes</p>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Model selection -->
+          <div class="control-group">
+            <span class="control-group__label">Modèle d'IA utilisé</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" name="model" id="model-gpt4o" value="gpt4o" checked />
+                <label for="model-gpt4o">
+                  <span class="radio-icon">🟢</span> GPT-4o
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="model" id="model-claude" value="claude" />
+                <label for="model-claude">
+                  <span class="radio-icon">🟠</span> Claude Sonnet
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="model" id="model-gemini" value="gemini" />
+                <label for="model-gemini">
+                  <span class="radio-icon">🔵</span> Gemini Flash
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="model" id="model-mistral" value="mistral" />
+                <label for="model-mistral">
+                  <span class="radio-icon">🟣</span> Mistral Large
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="model" id="model-reasoning" value="reasoning" />
+                <label for="model-reasoning">
+                  <span class="radio-icon">🔴</span> Raisonnement (o3)
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="model" id="model-light" value="light" />
+                <label for="model-light">
+                  <span class="radio-icon">⚪</span> Modèle léger
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Task type -->
+          <div class="control-group">
+            <span class="control-group__label">Type de tâche</span>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" name="task" id="task-text" value="text" checked />
+                <label for="task-text">
+                  <span class="radio-icon">💬</span> Texte / Chat
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="task" id="task-image" value="image" />
+                <label for="task-image">
+                  <span class="radio-icon">🖼️</span> Images
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="task" id="task-code" value="code" />
+                <label for="task-code">
+                  <span class="radio-icon">💻</span> Code
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="task" id="task-analysis" value="analysis" />
+                <label for="task-analysis">
+                  <span class="radio-icon">📊</span> Analyse
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Results Panel -->
+        <div class="results-panel" data-animate>
+          <div class="card">
+            <div class="results__period-toggle">
+              <button class="period-btn active" data-period="day" id="btn-period-day">Par jour</button>
+              <button class="period-btn" data-period="month" id="btn-period-month">Par mois</button>
+              <button class="period-btn" data-period="year" id="btn-period-year">Par an</button>
+            </div>
+
+            <div class="metrics-grid">
+              <!-- Energy -->
+              <div class="metric-card">
+                <div class="metric-card__icon metric-card__icon--energy">⚡</div>
+                <div class="metric-card__content">
+                  <div class="metric-card__label">Énergie consommée</div>
+                  <div>
+                    <span class="metric-card__value metric-card__value--energy" id="metric-energy">0</span>
+                    <span class="metric-card__unit" id="metric-energy-unit">Wh</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CO2 -->
+              <div class="metric-card">
+                <div class="metric-card__icon metric-card__icon--co2">🌍</div>
+                <div class="metric-card__content">
+                  <div class="metric-card__label">Émissions CO₂</div>
+                  <div>
+                    <span class="metric-card__value metric-card__value--co2" id="metric-co2">0</span>
+                    <span class="metric-card__unit" id="metric-co2-unit">g CO₂e</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Water -->
+              <div class="metric-card">
+                <div class="metric-card__icon metric-card__icon--water">💧</div>
+                <div class="metric-card__content">
+                  <div class="metric-card__label">Eau consommée</div>
+                  <div>
+                    <span class="metric-card__value metric-card__value--water" id="metric-water">0</span>
+                    <span class="metric-card__unit" id="metric-water-unit">mL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Impact level -->
+            <div class="impact-indicator impact-indicator--low" id="impact-indicator">
+              <div class="impact-indicator__dot"></div>
+              <span class="impact-indicator__text" id="impact-text">Impact faible — Votre usage est raisonnable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ÉQUIVALENCES ============ -->
+  <section class="section" id="equivalences">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <h2 class="section__title">📐 Équivalences Annuelles</h2>
+        <p class="section__subtitle">Pour donner du sens aux chiffres — voici ce que représente votre usage sur un an
+        </p>
+      </div>
+
+      <div class="equivalences-grid" data-animate>
+        <div class="equiv-card">
+          <span class="equiv-card__icon">🚗</span>
+          <div class="equiv-card__value" id="equiv-car">0</div>
+          <div class="equiv-card__label">km en voiture</div>
+        </div>
+
+        <div class="equiv-card">
+          <span class="equiv-card__icon">📱</span>
+          <div class="equiv-card__value" id="equiv-phone">0</div>
+          <div class="equiv-card__label">charges de smartphone</div>
+        </div>
+
+        <div class="equiv-card">
+          <span class="equiv-card__icon">📺</span>
+          <div class="equiv-card__value" id="equiv-streaming">0</div>
+          <div class="equiv-card__label">heures de streaming</div>
+        </div>
+
+        <div class="equiv-card">
+          <span class="equiv-card__icon">🔍</span>
+          <div class="equiv-card__value" id="equiv-google">0</div>
+          <div class="equiv-card__label">recherches Google</div>
+        </div>
+
+        <div class="equiv-card">
+          <span class="equiv-card__icon">🍶</span>
+          <div class="equiv-card__value" id="equiv-water">0</div>
+          <div class="equiv-card__label">bouteilles d'eau (50 cL)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARAISON MODÈLES ============ -->
+  <section class="section" id="comparaison">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <h2 class="section__title">📊 Comparaison des Modèles</h2>
+        <p class="section__subtitle">Consommation énergétique par jour selon votre configuration actuelle</p>
+      </div>
+
+      <div class="card chart-section" data-animate>
+        <div class="chart-container">
+          <div class="chart-bar">
+            <span class="chart-bar__label">GPT-4o</span>
+            <div class="chart-bar__track">
+              <div class="chart-bar__fill" data-model="gpt4o" style="width: 0%"></div>
+            </div>
+            <span class="chart-bar__amount">0 Wh</span>
+          </div>
+
+          <div class="chart-bar">
+            <span class="chart-bar__label">Claude Sonnet</span>
+            <div class="chart-bar__track">
+              <div class="chart-bar__fill" data-model="claude" style="width: 0%"></div>
+            </div>
+            <span class="chart-bar__amount">0 Wh</span>
+          </div>
+
+          <div class="chart-bar">
+            <span class="chart-bar__label">Gemini Flash</span>
+            <div class="chart-bar__track">
+              <div class="chart-bar__fill" data-model="gemini" style="width: 0%"></div>
+            </div>
+            <span class="chart-bar__amount">0 Wh</span>
+          </div>
+
+          <div class="chart-bar">
+            <span class="chart-bar__label">Mistral Large</span>
+            <div class="chart-bar__track">
+              <div class="chart-bar__fill" data-model="mistral" style="width: 0%"></div>
+            </div>
+            <span class="chart-bar__amount">0 Wh</span>
+          </div>
+
+          <div class="chart-bar">
+            <span class="chart-bar__label">Raisonnement (o3)</span>
+            <div class="chart-bar__track">
+              <div class="chart-bar__fill" data-model="reasoning" style="width: 0%"></div>
+            </div>
+            <span class="chart-bar__amount">0 Wh</span>
+          </div>
+
+          <div class="chart-bar">
+            <span class="chart-bar__label">Modèle léger</span>
+            <div class="chart-bar__track">
+              <div class="chart-bar__fill" data-model="light" style="width: 0%"></div>
+            </div>
+            <span class="chart-bar__amount">0 Wh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION ÉDUCATIVE ============ -->
+  <section class="section" id="comprendre">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <h2 class="section__title">📚 Comprendre l'Impact</h2>
+        <p class="section__subtitle">Les clés pour décrypter l'empreinte environnementale de l'IA</p>
+      </div>
+
+      <div class="accordion" data-animate>
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" id="accordion-btn-training">
+            <span>
+              <span class="accordion-trigger__icon">🏋️</span>
+              Entraînement vs Inférence : quelle différence ?
+            </span>
+            <svg class="accordion-trigger__chevron" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              <p>L'impact environnemental de l'IA se divise en deux phases distinctes :</p>
+              <ul>
+                <li><strong>L'entraînement</strong> est une phase ponctuelle mais extrêmement intensive. Entraîner un
+                  modèle comme GPT-4 nécessite des milliers de GPU fonctionnant pendant des semaines, consommant
+                  plusieurs dizaines de GWh d'électricité et des centaines de milliers de litres d'eau.</li>
+                <li><strong>L'inférence</strong> correspond à chaque requête que vous envoyez. Le coût unitaire semble
+                  faible (quelques fractions de Wh), mais multiplié par des milliards d'interactions quotidiennes à
+                  l'échelle mondiale, l'impact cumulé est considérable.</li>
+                <li>Cet outil calcule l'impact de <strong>l'inférence uniquement</strong> — c'est-à-dire votre usage
+                  quotidien — car c'est le levier sur lequel vous avez une prise directe.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" id="accordion-btn-models">
+            <span>
+              <span class="accordion-trigger__icon">⚖️</span>
+              Pourquoi les modèles n'ont-ils pas le même impact ?
+            </span>
+            <svg class="accordion-trigger__chevron" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              <p>Plusieurs facteurs expliquent les écarts :</p>
+              <ul>
+                <li><strong>Taille du modèle</strong> : un modèle avec plus de paramètres (GPT-4, Claude) consomme plus
+                  de calcul par requête qu'un modèle léger (GPT-4o mini, Gemini Flash).</li>
+                <li><strong>Architecture</strong> : les modèles de « raisonnement » (o3, o1) effectuent de multiples
+                  passes de réflexion, consommant 10 à 70× plus d'énergie qu'un modèle standard.</li>
+                <li><strong>Localisation des datacenters</strong> : le mix énergétique du pays où se trouve le
+                  datacenter change drastiquement les émissions CO₂. Google (Gemini) a un faible CO₂/requête grâce à ses
+                  investissements en énergie renouvelable.</li>
+                <li><strong>Hardware</strong> : les GPU de dernière génération (NVIDIA H100, H200) sont beaucoup plus
+                  efficaces que les générations précédentes. Google utilise ses propres TPU optimisés.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" id="accordion-btn-water">
+            <span>
+              <span class="accordion-trigger__icon">💧</span>
+              Pourquoi l'IA consomme-t-elle de l'eau ?
+            </span>
+            <svg class="accordion-trigger__chevron" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              <p>La consommation d'eau de l'IA provient de deux sources :</p>
+              <ul>
+                <li><strong>Refroidissement direct</strong> : les datacenters utilisent des systèmes de refroidissement
+                  par évaporation qui consomment de grandes quantités d'eau pour dissiper la chaleur générée par les
+                  GPU.</li>
+                <li><strong>Production d'électricité</strong> : les centrales thermiques (charbon, gaz, nucléaire) qui
+                  alimentent les datacenters utilisent elles-mêmes de l'eau pour leur refroidissement.</li>
+                <li>Pour donner un ordre de grandeur : l'entraînement de GPT-3 a nécessité environ <strong>700 000
+                    litres d'eau</strong>. Une seule requête Mistral Large consomme environ <strong>45 mL</strong> —
+                  soit presque un demi-verre.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" id="accordion-btn-tips">
+            <span>
+              <span class="accordion-trigger__icon">🌿</span>
+              Comment réduire son empreinte IA ?
+            </span>
+            <svg class="accordion-trigger__chevron" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              <p>Quelques gestes concrets pour réduire votre impact :</p>
+              <ul>
+                <li><strong>Choisir le bon modèle</strong> : pour une question simple, un modèle léger (GPT-4o mini,
+                  Gemini Flash) suffit largement et consomme 3 à 10× moins.</li>
+                <li><strong>Être précis dans vos prompts</strong> : une requête bien formulée évite les allers-retours
+                  et les régénérations inutiles.</li>
+                <li><strong>Éviter les modèles de raisonnement</strong> pour les tâches simples : les modèles comme o3
+                  sont puissants mais consomment jusqu'à 70× plus d'énergie.</li>
+                <li><strong>Limiter la génération d'images/vidéos</strong> : ces tâches consomment 4 à 1000× plus
+                  d'énergie que le texte.</li>
+                <li><strong>Se poser la question : « Ai-je vraiment besoin de l'IA pour ça ? »</strong> Une recherche
+                  Google classique consomme 10× moins qu'une requête IA.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" id="accordion-btn-methodology">
+            <span>
+              <span class="accordion-trigger__icon">🔬</span>
+              Méthodologie et limites
+            </span>
+            <svg class="accordion-trigger__chevron" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              <p>Cet outil fournit des <strong>estimations indicatives</strong> basées sur les meilleures données
+                publiques disponibles. Voici les principales limites :</p>
+              <ul>
+                <li><strong>Opacité des fournisseurs</strong> : les entreprises communiquent peu ou avec des
+                  méthodologies divergentes sur leur impact réel.</li>
+                <li><strong>Variabilité</strong> : l'impact réel varie selon le datacenter, le mix énergétique local, le
+                  hardware utilisé, et la longueur effective de chaque requête.</li>
+                <li><strong>Scope limité</strong> : cet outil ne prend en compte que l'inférence (utilisation), pas
+                  l'entraînement des modèles ni la fabrication du matériel.</li>
+                <li><strong>Évolution rapide</strong> : les gains d'efficacité sont constants. Google a réduit son
+                  empreinte de 33× en 12 mois sur Gemini.</li>
+              </ul>
+              <p style="margin-top: var(--space-md);">
+                <span class="methodology-tag">📄 Sources principales</span>
+              </p>
+              <ul>
+                <li>Google Environmental Report 2025 (Gemini : 0.24 Wh/requête)</li>
+                <li>OpenAI / Sam Altman, juin 2025 (ChatGPT : 0.34 Wh/requête)</li>
+                <li>Epoch AI, février 2025 (estimation indépendante : ~0.3 Wh)</li>
+                <li>Mistral AI — Analyse de cycle de vie Mistral Large 2 (1.14 gCO₂e, 45 mL/requête)</li>
+                <li>Recherches académiques (UC Riverside, arXiv) sur la consommation d'eau</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__sources">
+          <h4>📎 Sources & Références</h4>
+          <p>
+            <a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/"
+              target="_blank" rel="noopener">Google — Gemini Environmental Impact (2025)</a> ·
+            <a href="https://epochai.org/" target="_blank" rel="noopener">Epoch AI — AI Compute Trends</a> ·
+            <a href="https://mistral.ai" target="_blank" rel="noopener">Mistral AI — ACV Mistral Large 2</a> ·
+            <a href="https://www.iea.org/reports/electricity-2024" target="_blank" rel="noopener">IEA — Electricity
+              Report</a> ·
+            <a href="https://defis.data.gouv.fr/defis/limpact-environnemental-de-lia-generative" target="_blank"
+              rel="noopener">Défi data.gouv.fr</a>
+          </p>
+        </div>
+        <div class="footer__bottom">
+          <p>Projet réalisé dans le cadre du défi <strong>« L'impact environnemental de l'IA générative »</strong> — <a
+              href="https://defis.data.gouv.fr" target="_blank" rel="noopener">defis.data.gouv.fr</a></p>
+          <p>Données publiques · Open Source · 2025</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
