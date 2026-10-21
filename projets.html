@@ -1,0 +1,948 @@
+<!doctype html>
+<!-- Page modifiable directement. Le texte français est dans le HTML ; data-en contient sa traduction. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" />
+    <title data-en="Projects — Yassine Tahiri">Mes projets — Yassine Tahiri</title>
+    <meta
+      name="description"
+      content="Étudiant en cycle ingénieur en Informatique et ingénierie mathématique (IIM) à Polytech Paris-Saclay, et apprenti chef de projet chez Novatine."
+      data-en-content="Engineering student in Computer Science and Mathematical Engineering (IIM) at Polytech Paris-Saclay, and apprentice project manager at Novatine."
+    />
+    <meta
+      property="og:title"
+      content="Mes projets — Yassine Tahiri"
+      data-en-content="Projects — Yassine Tahiri"
+    />
+    <meta
+      property="og:description"
+      content="Étudiant en cycle ingénieur en Informatique et ingénierie mathématique (IIM) à Polytech Paris-Saclay, et apprenti chef de projet chez Novatine."
+      data-en-content="Engineering student in Computer Science and Mathematical Engineering (IIM) at Polytech Paris-Saclay, and apprentice project manager at Novatine."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/print.css" />
+    <script>
+      // Le thème est lu avant l'affichage pour éviter un flash blanc.
+      try {
+        const theme = localStorage.getItem("yt-theme") || "light";
+        document.documentElement.dataset.theme =
+          theme === "system"
+            ? matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : theme;
+      } catch {}
+    </script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top" data-page="projects">
+    <div id="app">
+      <a class="skip-link" href="#main" data-en="Skip to content">Aller au contenu</a>
+      <!-- Navigation commune : garder les mêmes liens sur chaque page. -->
+      <header class="site-header">
+        <div class="nav-wrap">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Yassine Tahiri — Accueil"
+            data-en-aria-label="Yassine Tahiri — Home"
+          >
+            yt
+            <span>.</span>
+          </a>
+          <nav
+            class="desktop-nav"
+            aria-label="Navigation principale"
+            data-en-aria-label="Main navigation"
+          >
+            <a href="index.html" data-en="Home">Accueil</a>
+
+            <a href="projets.html" aria-current="page" data-en="Projects">Projets</a>
+
+            <a href="parcours.html" data-en="Journey">Parcours</a>
+
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button
+              class="search-trigger"
+              data-command
+              aria-label="Rechercher dans le portfolio"
+              data-en-aria-label="Search the portfolio"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#search"></use>
+              </svg>
+              <kbd>⌘ K</kbd>
+            </button>
+            <button
+              class="icon-button language-button lang-push"
+              data-language
+              aria-label="Passer le site en anglais"
+              data-en-aria-label="Switch the site to French"
+            >
+              <span class="language-cube" aria-hidden="true">
+                <span class="language-face language-front">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#translate"></use>
+                  </svg>
+                </span>
+                <span class="language-face language-bottom" data-en="FR">ANG</span>
+              </span>
+            </button>
+            <button
+              class="icon-button"
+              data-theme
+              aria-label="Changer le thème"
+              aria-haspopup="dialog"
+              data-en-aria-label="Change theme"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#sun"></use>
+              </svg>
+            </button>
+            <button
+              class="icon-button mobile-toggle"
+              data-menu
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              data-en-aria-label="Open menu"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#menu"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenu propre à cette page : modifier les textes et les sections ici. -->
+      <main id="main" class="shell projects-page">
+        <header class="page-heading">
+          <span class="eyebrow" data-en="Development · Systems &amp; networks">
+            Développement · Systèmes &amp; réseaux
+          </span>
+          <h1 data-en="My projects.">Mes projets.</h1>
+          <p
+            data-en="For each project: the context, the work completed, the tools used and what I learned."
+          >
+            Pour chaque projet : le contexte, le travail réalisé, les outils utilisés et ce que j’ai
+            appris.
+          </p>
+        </header>
+        <div class="project-toolbar">
+          <div
+            class="project-filters"
+            role="group"
+            aria-label="Filtrer par domaine"
+            data-en-aria-label="Filter by field"
+          >
+            <button
+              data-filter="all"
+              class="filter-button active"
+              aria-pressed="true"
+              data-en="All"
+            >
+              Tous
+            </button>
+
+            <button
+              data-filter="dev"
+              class="filter-button"
+              aria-pressed="false"
+              data-en="Development"
+            >
+              Développement
+            </button>
+
+            <button
+              data-filter="systems"
+              class="filter-button"
+              aria-pressed="false"
+              data-en="Systems &amp; networks"
+            >
+              Systèmes &amp; réseaux
+            </button>
+
+            <button data-filter="saved" class="filter-button" aria-pressed="false">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#bookmark"></use>
+              </svg>
+              <span class="translated-text" data-en="My collection">Ma sélection</span>
+              <span class="saved-count">0</span>
+            </button>
+          </div>
+          <label class="project-search">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#search"></use>
+            </svg>
+            <input
+              type="search"
+              id="project-search"
+              placeholder="Rechercher un projet, une technologie…"
+              aria-label="Rechercher un projet, une technologie…"
+              autocomplete="off"
+              data-en-aria-label="Search projects or technologies…"
+              data-en-placeholder="Search projects or technologies…"
+            />
+          </label>
+        </div>
+        <div class="results-toolbar">
+          <span id="results-count" role="status" aria-live="polite" data-en="4 projects">
+            4 projets
+          </span>
+          <div>
+            <label class="sort-label">
+              <span class="sr-only" data-en="Sort projects">Trier les projets</span>
+              <select
+                id="project-sort"
+                aria-label="Trier les projets"
+                data-en-aria-label="Sort projects"
+              >
+                <option value="default" data-en="Portfolio order">Ordre du portfolio</option>
+                <option value="az" data-en="Title: A → Z">Titre : A → Z</option>
+              </select>
+            </label>
+            <div class="view-switch" role="group" aria-label="Affichage" data-en-aria-label="View">
+              <button
+                class="icon-button active"
+                data-view="grid"
+                aria-pressed="true"
+                aria-label="Vue en grille"
+                data-en-aria-label="Grid view"
+              >
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="assets/icons.svg#grid"></use>
+                </svg>
+              </button>
+              <button
+                class="icon-button"
+                data-view="list"
+                aria-pressed="false"
+                aria-label="Vue en liste"
+                data-en-aria-label="List view"
+              >
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="assets/icons.svg#list"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="project-grid" class="project-grid">
+          <article
+            class="project-card"
+            data-project="ciup"
+            data-category="dev"
+            data-order="0"
+            data-keywords="Gestion de la CIUP CIUP management Java Swing Git UML"
+          >
+            <a
+              class="project-image-link"
+              href="ciup.html"
+              aria-label="Découvrir le projet : Gestion de la CIUP"
+              data-en-aria-label="Explore the project : CIUP management"
+            >
+              <div class="project-visual visual-ciup">
+                <div class="window-frame">
+                  <div class="window-bar">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <span>CIUP · Java Swing</span>
+                  </div>
+                  <img
+                    src="assets/projets/p1/liste.png"
+                    alt="Écran de gestion des maisons"
+                    loading="lazy"
+                    width="1704"
+                    height="1154"
+                    data-en-alt="Residence management screen"
+                  />
+                </div>
+                <span class="visual-label">INTERFACE / JAVA SWING</span>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span>
+                  <span class="translated-text" data-en="Development">Développement</span>
+                  <span class="meta-slash">/</span>
+                  01
+                </span>
+                <button
+                  class="save-button icon-button"
+                  data-save="ciup"
+                  aria-label="Enregistrer le projet : Gestion de la CIUP"
+                  aria-pressed="false"
+                  data-en-aria-label="Save project : CIUP management"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#bookmark"></use>
+                  </svg>
+                </button>
+              </div>
+              <a class="project-title-link" href="ciup.html">
+                <h3 data-en="CIUP management">Gestion de la CIUP</h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="assets/icons.svg#diagonal"></use>
+                </svg>
+              </a>
+              <p
+                data-en="An application to manage residences and students at the Cité internationale universitaire de Paris."
+              >
+                Une application de gestion des maisons et des étudiants de la Cité internationale
+                universitaire de Paris.
+              </p>
+              <div class="tags">
+                <span>Java</span>
+
+                <span>Swing</span>
+
+                <span>Git</span>
+
+                <span>UML</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-project="jeu-2d"
+            data-category="dev"
+            data-order="1"
+            data-keywords="Jeu 2D en C++ 2D game in C++ C++ SDL2 POO"
+          >
+            <a
+              class="project-image-link"
+              href="jeu-2d.html"
+              aria-label="Découvrir le projet : Jeu 2D en C++"
+              data-en-aria-label="Explore the project : 2D game in C++"
+            >
+              <div class="project-visual visual-game">
+                <div class="pixel-grid" aria-hidden="true"></div>
+                <div class="game-label">
+                  C++
+                  <span>/ SDL2</span>
+                </div>
+                <img
+                  src="assets/projets/p2/chevalier-pixel.gif"
+                  alt="Illustration pixel art du portfolio d’origine"
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  data-en-alt="Pixel-art illustration from the original portfolio"
+                />
+                <span class="visual-label" data-en="A WORLD OF PIXELS">UN UNIVERS EN PIXELS</span>
+                <span class="pixel-star" aria-hidden="true">✦</span>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span>
+                  <span class="translated-text" data-en="Development">Développement</span>
+                  <span class="meta-slash">/</span>
+                  02
+                </span>
+                <button
+                  class="save-button icon-button"
+                  data-save="jeu-2d"
+                  aria-label="Enregistrer le projet : Jeu 2D en C++"
+                  aria-pressed="false"
+                  data-en-aria-label="Save project : 2D game in C++"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#bookmark"></use>
+                  </svg>
+                </button>
+              </div>
+              <a class="project-title-link" href="jeu-2d.html">
+                <h3 data-en="2D game in C++">Jeu 2D en C++</h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="assets/icons.svg#diagonal"></use>
+                </svg>
+              </a>
+              <p
+                data-en="A 2D C++ game with animations, levels, collisions and enemies in a pixel-art world."
+              >
+                Un jeu 2D en C++ : animations, niveaux, collisions et ennemis dans un univers pixel
+                art.
+              </p>
+              <div class="tags">
+                <span>C++</span>
+
+                <span>SDL2</span>
+
+                <span>POO</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-project="raspberry"
+            data-category="systems"
+            data-order="2"
+            data-keywords="Serveur Linux sur Raspberry Pi Linux server on Raspberry Pi Linux Raspberry Pi SSH MariaDB Python"
+          >
+            <a
+              class="project-image-link"
+              href="raspberry.html"
+              aria-label="Découvrir le projet : Serveur Linux sur Raspberry Pi"
+              data-en-aria-label="Explore the project : Linux server on Raspberry Pi"
+            >
+              <div class="project-visual visual-pi">
+                <span class="hardware-label">$ ssh pi@raspberry</span>
+                <img
+                  src="assets/projets/p3/Rasperry.webp"
+                  alt="Illustration d’un Raspberry Pi"
+                  width="1000"
+                  height="1000"
+                  loading="lazy"
+                  data-en-alt="Raspberry Pi illustration"
+                />
+                <span class="visual-label">LINUX / MARIADB / SSH</span>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span>
+                  <span class="translated-text" data-en="Systems &amp; networks">
+                    Systèmes &amp; réseaux
+                  </span>
+                  <span class="meta-slash">/</span>
+                  03
+                </span>
+                <button
+                  class="save-button icon-button"
+                  data-save="raspberry"
+                  aria-label="Enregistrer le projet : Serveur Linux sur Raspberry Pi"
+                  aria-pressed="false"
+                  data-en-aria-label="Save project : Linux server on Raspberry Pi"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#bookmark"></use>
+                  </svg>
+                </button>
+              </div>
+              <a class="project-title-link" href="raspberry.html">
+                <h3 data-en="Linux server on Raspberry Pi">Serveur Linux sur Raspberry Pi</h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="assets/icons.svg#diagonal"></use>
+                </svg>
+              </a>
+              <p
+                data-en="A Linux environment and MariaDB server on Raspberry Pi, with documentation in English."
+              >
+                Installation d’un environnement Linux et d’un serveur MariaDB sur Raspberry Pi, avec
+                documentation en anglais.
+              </p>
+              <div class="tags">
+                <span>Linux</span>
+
+                <span>Raspberry Pi</span>
+
+                <span>SSH</span>
+
+                <span>MariaDB</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-project="reseau"
+            data-category="systems"
+            data-order="3"
+            data-keywords="Configuration d’un réseau Debian Debian network configuration Debian DNS DHCP SSH Wireshark"
+          >
+            <a
+              class="project-image-link"
+              href="reseau.html"
+              aria-label="Découvrir le projet : Configuration d’un réseau Debian"
+              data-en-aria-label="Explore the project : Debian network configuration"
+            >
+              <div class="project-visual visual-network">
+                <div class="network-drawing" aria-hidden="true">
+                  <svg viewBox="0 0 400 220" fill="none">
+                    <path
+                      d="M70 60 200 110 330 60M70 160 200 110 330 160M200 110V20M200 110v90"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    ></path>
+                    <circle
+                      cx="200"
+                      cy="110"
+                      r="27"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></circle>
+                    <rect
+                      x="42"
+                      y="42"
+                      width="56"
+                      height="36"
+                      rx="6"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></rect>
+                    <rect
+                      x="42"
+                      y="142"
+                      width="56"
+                      height="36"
+                      rx="6"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></rect>
+                    <rect
+                      x="302"
+                      y="42"
+                      width="56"
+                      height="36"
+                      rx="6"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></rect>
+                    <rect
+                      x="302"
+                      y="142"
+                      width="56"
+                      height="36"
+                      rx="6"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></rect>
+                    <circle
+                      cx="200"
+                      cy="20"
+                      r="8"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></circle>
+                    <circle
+                      cx="200"
+                      cy="200"
+                      r="8"
+                      fill="var(--network-node)"
+                      stroke="currentColor"
+                    ></circle>
+                    <path
+                      d="M188 110h24m-12-12v24M60 60h20M60 160h20M320 60h20M320 160h20"
+                      stroke="currentColor"
+                    ></path>
+                  </svg>
+                  <span>DNS</span>
+                  <span>DHCP</span>
+                  <span>SSH</span>
+                </div>
+                <span class="visual-label">DEBIAN / NETWORK SERVICES</span>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span>
+                  <span class="translated-text" data-en="Systems &amp; networks">
+                    Systèmes &amp; réseaux
+                  </span>
+                  <span class="meta-slash">/</span>
+                  04
+                </span>
+                <button
+                  class="save-button icon-button"
+                  data-save="reseau"
+                  aria-label="Enregistrer le projet : Configuration d’un réseau Debian"
+                  aria-pressed="false"
+                  data-en-aria-label="Save project : Debian network configuration"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#bookmark"></use>
+                  </svg>
+                </button>
+              </div>
+              <a class="project-title-link" href="reseau.html">
+                <h3 data-en="Debian network configuration">Configuration d’un réseau Debian</h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="assets/icons.svg#diagonal"></use>
+                </svg>
+              </a>
+              <p
+                data-en="A Linux network configuration project: services, remote access and understanding exchanges."
+              >
+                Un projet de configuration réseau sous Linux : services, accès distants et
+                compréhension des échanges.
+              </p>
+              <div class="tags">
+                <span>Debian</span>
+
+                <span>DNS</span>
+
+                <span>DHCP</span>
+
+                <span>SSH</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div id="empty-state" class="empty-state" hidden>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="assets/icons.svg#search"></use>
+          </svg>
+          <h2 data-en="No projects match your search.">Aucun projet pour cette recherche.</h2>
+          <p data-en="Try another term or remove a filter.">
+            Essaie un autre terme ou enlève un filtre.
+          </p>
+          <button class="button secondary" data-reset data-en="Reset filters">
+            Réinitialiser les filtres
+          </button>
+        </div>
+        <p class="local-note">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="assets/icons.svg#bookmark"></use>
+          </svg>
+          <span class="translated-text" data-en="Private collection, in this browser.">
+            Sélection privée, dans ce navigateur.
+          </span>
+        </p>
+      </main>
+
+      <section class="contact-nudge shell">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 data-en="Let’s discuss your project.">Parlons de votre projet.</h2>
+          <p data-en="You can reach me by email or on LinkedIn.">
+            Vous pouvez me joindre par email ou sur LinkedIn.
+          </p>
+        </div>
+        <a href="contact.html" class="round-link" aria-label="Contact">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="assets/icons.svg#diagonal"></use>
+          </svg>
+        </a>
+      </section>
+
+      <!-- Pied de page et liens professionnels. -->
+      <footer class="site-footer shell">
+        <a class="brand" href="index.html" aria-label="Yassine Tahiri">
+          yt
+          <span>.</span>
+        </a>
+        <p data-en="Computing · Mathematics · Cybersecurity">
+          Informatique · Mathématiques · Cybersécurité
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/YassineT-git" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#diagonal"></use>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yassine-t/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#diagonal"></use>
+            </svg>
+          </a>
+          <button data-privacy data-en="Privacy">Confidentialité</button>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Yassine Tahiri</span>
+          <span data-en="Yassine Tahiri’s portfolio">Portfolio de Yassine Tahiri</span>
+          <a href="#top" data-en="Back to top ↑">Retour en haut ↑</a>
+        </div>
+      </footer>
+
+      <!-- Fenêtres : recherche rapide, apparence, confidentialité et galerie. -->
+      <dialog
+        id="command-dialog"
+        class="command-dialog"
+        aria-label="Accès rapide"
+        data-en-aria-label="Quick access"
+      >
+        <div class="command-header">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="assets/icons.svg#search"></use>
+          </svg>
+          <input
+            id="command-input"
+            type="search"
+            aria-label="Accès rapide"
+            placeholder="Rechercher une page ou un projet…"
+            autocomplete="off"
+            data-en-aria-label="Quick access"
+            data-en-placeholder="Search pages or projects…"
+          />
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div id="command-results" class="command-results">
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="accueil home"
+            href="index.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#arrow"></use>
+            </svg>
+            <span data-en="Home">Accueil</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="projets projects"
+            href="projets.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#code"></use>
+            </svg>
+            <span data-en="Projects">Projets</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="formation parcours experience journey education cybersécurité cybersecurity"
+            href="parcours.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#arrow"></use>
+            </svg>
+            <span data-en="Journey">Parcours</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="email contact"
+            href="contact.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#mail"></use>
+            </svg>
+            <span>Contact</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Gestion de la CIUP CIUP management Java Swing UML"
+            href="ciup.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#code"></use>
+            </svg>
+            <span data-en="CIUP management">Gestion de la CIUP</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Jeu 2D en C++ 2D game in C++ C++ SDL2 POO jeu game"
+            href="jeu-2d.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#code"></use>
+            </svg>
+            <span data-en="2D game in C++">Jeu 2D en C++</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Serveur Linux sur Raspberry Pi Linux server on Raspberry Pi Linux SSH MariaDB Python"
+            href="raspberry.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#network"></use>
+            </svg>
+            <span data-en="Linux server on Raspberry Pi">Serveur Linux sur Raspberry Pi</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Configuration d’un réseau Debian Debian network configuration Debian DNS DHCP SSH Wireshark"
+            href="reseau.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#network"></use>
+            </svg>
+            <span data-en="Debian network configuration">Configuration d’un réseau Debian</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="CV résumé resume curriculum vitae"
+            href="assets/CV_Yassine.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#download"></use>
+            </svg>
+            <span data-en="View résumé">Consulter le CV</span>
+            <small>PDF</small>
+          </a>
+          <p
+            class="command-empty"
+            id="command-empty"
+            hidden
+            data-en="No results. Try “Java”, “network” or “résumé”."
+          >
+            Aucun résultat. Essaie « Java », « réseau » ou « CV ».
+          </p>
+        </div>
+        <div class="command-footer">
+          <span data-en="↑ ↓ to navigate">↑ ↓ pour naviguer</span>
+          <span data-en="↵ to open">↵ pour ouvrir</span>
+          <span data-en="esc to close">esc pour fermer</span>
+        </div>
+      </dialog>
+      <dialog
+        id="theme-dialog"
+        class="small-dialog"
+        aria-label="Apparence"
+        data-en-aria-label="Appearance"
+      >
+        <div class="dialog-title">
+          <h2 data-en="Appearance">Apparence</h2>
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="theme-options">
+          <button data-set-theme="light" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#sun"></use>
+            </svg>
+            <span class="translated-text" data-en="Light">Clair</span>
+          </button>
+
+          <button data-set-theme="dark" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#moon"></use>
+            </svg>
+            <span class="translated-text" data-en="Dark">Sombre</span>
+          </button>
+
+          <button data-set-theme="system" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#globe"></use>
+            </svg>
+            <span class="translated-text" data-en="System">Système</span>
+          </button>
+        </div>
+      </dialog>
+      <dialog
+        id="privacy-dialog"
+        class="small-dialog"
+        aria-label="Confidentialité"
+        data-en-aria-label="Privacy"
+      >
+        <div class="dialog-title">
+          <h2 data-en="Simple, down to the data.">Simple, jusque dans les données.</h2>
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <p
+          data-en="This site uses no tracking tools. Theme, language, saved projects and the contact draft are stored only in your browser. You can clear them here. External links and your email application have their own privacy policies."
+        >
+          Ce site n’utilise aucun outil de suivi. Le thème, la langue, la sélection de projets et le
+          brouillon de contact sont stockés uniquement dans ton navigateur. Tu peux les effacer ici.
+          Les liens externes et ton application de messagerie ont leurs propres règles de
+          confidentialité.
+        </p>
+        <button class="button secondary" data-clear-local data-en="Clear my local data">
+          Effacer mes données locales
+        </button>
+      </dialog>
+      <dialog
+        id="gallery-dialog"
+        class="gallery-dialog"
+        aria-label="Aperçus du projet"
+        data-en-aria-label="Project visuals"
+      >
+        <div class="lightbox-header">
+          <span id="lightbox-count"></span>
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="lightbox-content">
+          <button
+            class="icon-button"
+            data-gallery-prev
+            aria-label="Image précédente"
+            data-en-aria-label="Previous image"
+          >
+            ←
+          </button>
+          <img id="lightbox-image" alt="" />
+          <button
+            class="icon-button"
+            data-gallery-next
+            aria-label="Image suivante"
+            data-en-aria-label="Next image"
+          >
+            →
+          </button>
+        </div>
+        <p id="lightbox-caption"></p>
+      </dialog>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+    <div id="navigation-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <noscript>
+      <p class="shell">
+        Les pages et les projets sont accessibles. Activez JavaScript pour les filtres, la
+        traduction et les animations.
+      </p>
+    </noscript>
+  </body>
+</html>

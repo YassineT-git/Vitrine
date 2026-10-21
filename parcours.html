@@ -1,0 +1,749 @@
+<!doctype html>
+<!-- Page modifiable directement. Le texte français est dans le HTML ; data-en contient sa traduction. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" />
+    <title data-en="Journey — Yassine Tahiri">Mon parcours — Yassine Tahiri</title>
+    <meta
+      name="description"
+      content="Étudiant en cycle ingénieur en Informatique et ingénierie mathématique (IIM) à Polytech Paris-Saclay, et apprenti chef de projet chez Novatine."
+      data-en-content="Engineering student in Computer Science and Mathematical Engineering (IIM) at Polytech Paris-Saclay, and apprentice project manager at Novatine."
+    />
+    <meta
+      property="og:title"
+      content="Mon parcours — Yassine Tahiri"
+      data-en-content="Journey — Yassine Tahiri"
+    />
+    <meta
+      property="og:description"
+      content="Étudiant en cycle ingénieur en Informatique et ingénierie mathématique (IIM) à Polytech Paris-Saclay, et apprenti chef de projet chez Novatine."
+      data-en-content="Engineering student in Computer Science and Mathematical Engineering (IIM) at Polytech Paris-Saclay, and apprentice project manager at Novatine."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/print.css" />
+    <script>
+      // Le thème est lu avant l'affichage pour éviter un flash blanc.
+      try {
+        const theme = localStorage.getItem("yt-theme") || "light";
+        document.documentElement.dataset.theme =
+          theme === "system"
+            ? matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : theme;
+      } catch {}
+    </script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top" data-page="about">
+    <div id="app">
+      <a class="skip-link" href="#main" data-en="Skip to content">Aller au contenu</a>
+      <!-- Navigation commune : garder les mêmes liens sur chaque page. -->
+      <header class="site-header">
+        <div class="nav-wrap">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Yassine Tahiri — Accueil"
+            data-en-aria-label="Yassine Tahiri — Home"
+          >
+            yt
+            <span>.</span>
+          </a>
+          <nav
+            class="desktop-nav"
+            aria-label="Navigation principale"
+            data-en-aria-label="Main navigation"
+          >
+            <a href="index.html" data-en="Home">Accueil</a>
+
+            <a href="projets.html" data-en="Projects">Projets</a>
+
+            <a href="parcours.html" aria-current="page" data-en="Journey">Parcours</a>
+
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button
+              class="search-trigger"
+              data-command
+              aria-label="Rechercher dans le portfolio"
+              data-en-aria-label="Search the portfolio"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#search"></use>
+              </svg>
+              <kbd>⌘ K</kbd>
+            </button>
+            <button
+              class="icon-button language-button lang-push"
+              data-language
+              aria-label="Passer le site en anglais"
+              data-en-aria-label="Switch the site to French"
+            >
+              <span class="language-cube" aria-hidden="true">
+                <span class="language-face language-front">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#translate"></use>
+                  </svg>
+                </span>
+                <span class="language-face language-bottom" data-en="FR">ANG</span>
+              </span>
+            </button>
+            <button
+              class="icon-button"
+              data-theme
+              aria-label="Changer le thème"
+              aria-haspopup="dialog"
+              data-en-aria-label="Change theme"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#sun"></use>
+              </svg>
+            </button>
+            <button
+              class="icon-button mobile-toggle"
+              data-menu
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              data-en-aria-label="Open menu"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#menu"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenu propre à cette page : modifier les textes et les sections ici. -->
+      <main id="main">
+        <header class="page-heading shell about-heading">
+          <span class="eyebrow" data-en="Yassine Tahiri / Journey">Yassine Tahiri / Parcours</span>
+          <h1 data-en="My journey.">Mon parcours.</h1>
+          <p data-en="My education, work experience and teaching activities.">
+            Mon parcours de formation, mes expériences en entreprise et mes activités
+            d’enseignement.
+          </p>
+        </header>
+        <div class="about-intro shell">
+          <span class="eyebrow" data-en="About me">Présentation</span>
+          <div>
+            <p
+              class="large-copy"
+              data-en="I have been an engineering student in Computer Science and Mathematical Engineering (IIM) at Polytech Paris-Saclay since September 2026. Before that, I studied at IUT d’Orsay on the Data &amp; Artificial Intelligence track, with the Mathematics for Engineers option. I am also an apprentice project manager at Novatine."
+            >
+              Je suis étudiant en cycle ingénieur en Informatique et ingénierie mathématique (IIM) à
+              Polytech Paris-Saclay depuis septembre 2026. J’ai auparavant étudié à l’IUT d’Orsay,
+              avec un parcours Data &amp; Intelligence artificielle et l’option Mathématiques pour
+              l’ingénieur. Je suis également apprenti chef de projet chez Novatine.
+            </p>
+            <a class="text-link" href="assets/CV_Yassine.pdf" download>
+              <span class="translated-text" data-en="Download résumé">Télécharger le CV</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="assets/icons.svg#download"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <section class="experience-section shell" id="experience">
+          <div class="section-heading">
+            <h2 data-en="Work experience">Expériences professionnelles</h2>
+            <p data-en="Cybersecurity, project management and teaching.">
+              Cybersécurité, gestion de projet et formation.
+            </p>
+          </div>
+          <div class="timeline">
+            <details class="experience-item" open>
+              <summary>
+                <span class="experience-date" data-en="2025 — Present">2025 — Présent</span>
+                <div>
+                  <span class="experience-org">Novatine</span>
+                  <h3 data-en="Apprentice project manager">Apprenti chef de projet</h3>
+                  <p data-en="Cybersecurity &amp; project management">
+                    Cybersécurité &amp; gestion de projet
+                  </p>
+                </div>
+                <span class="expand-icon">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#plus"></use>
+                  </svg>
+                </span>
+              </summary>
+              <div class="experience-content">
+                <ul>
+                  <li
+                    data-en="Contributed to scoping, planning and operational follow-up of cybersecurity projects."
+                  >
+                    Contribution au cadrage, à la planification et au suivi opérationnel de projets
+                    cybersécurité.
+                  </li>
+
+                  <li
+                    data-en="Participated in EDR and SIEM deployments, audits and LPM compliance processes."
+                  >
+                    Participation au déploiement de solutions EDR et SIEM et aux démarches d’audit
+                    et d’homologation LPM.
+                  </li>
+
+                  <li
+                    data-en="Created training materials and analysed data for AI-related projects."
+                  >
+                    Conception de supports de formation et analyse de données dans des projets liés
+                    à l’IA.
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="experience-item">
+              <summary>
+                <span class="experience-date">2024 — 2025</span>
+                <div>
+                  <span class="experience-org">Novatine</span>
+                  <h3 data-en="Assistant project manager">Assistant chef de projet</h3>
+                  <p data-en="Data protection">Protection des données</p>
+                </div>
+                <span class="expand-icon">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#plus"></use>
+                  </svg>
+                </span>
+              </summary>
+              <div class="experience-content">
+                <ul>
+                  <li data-en="Analysed data flows and information leakage risks.">
+                    Analyse des flux de données et des risques de fuite d’information.
+                  </li>
+
+                  <li
+                    data-en="Configured DLP policies, participated in testing and incident follow-up."
+                  >
+                    Paramétrage de politiques DLP, participation aux tests et au suivi des
+                    incidents.
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="experience-item">
+              <summary>
+                <span class="experience-date" data-en="Summer 2023">Été 2023</span>
+                <div>
+                  <span class="experience-org">Open BPO</span>
+                  <h3 data-en="Cybersecurity intern">Stagiaire en cybersécurité</h3>
+                  <p data-en="Endpoint security &amp; documentation">
+                    Sécurité des postes &amp; documentation
+                  </p>
+                </div>
+                <span class="expand-icon">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#plus"></use>
+                  </svg>
+                </span>
+              </summary>
+              <div class="experience-content">
+                <ul>
+                  <li
+                    data-en="Participated in an EDR deployment and post-installation troubleshooting."
+                  >
+                    Participation au déploiement d’une solution EDR et à la résolution des
+                    difficultés après installation.
+                  </li>
+
+                  <li data-en="Wrote technical documentation and contributed to a FAQ.">
+                    Rédaction de documentation technique et contribution à une FAQ.
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="experience-item">
+              <summary>
+                <span class="experience-date" data-en="Summer 2023">Été 2023</span>
+                <div>
+                  <span class="experience-org">OSM’OZ</span>
+                  <h3 data-en="AI trainer">Formateur en intelligence artificielle</h3>
+                  <p data-en="Teaching &amp; learning">Transmission &amp; pédagogie</p>
+                </div>
+                <span class="expand-icon">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#plus"></use>
+                  </svg>
+                </span>
+              </summary>
+              <div class="experience-content">
+                <ul>
+                  <li
+                    data-en="Created and delivered introductory AI modules using games, quizzes and FAQs."
+                  >
+                    Création et animation de modules de découverte de l’IA avec jeux, quiz et FAQ.
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="experience-item">
+              <summary>
+                <span class="experience-date" data-en="Since 2022">Depuis 2022</span>
+                <div>
+                  <span class="experience-org" data-en="Independent">Indépendant</span>
+                  <h3 data-en="Mathematics tutor">Professeur de mathématiques</h3>
+                  <p data-en="One-to-one support">Accompagnement individuel</p>
+                </div>
+                <span class="expand-icon">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="assets/icons.svg#plus"></use>
+                  </svg>
+                </span>
+              </summary>
+              <div class="experience-content">
+                <ul>
+                  <li
+                    data-en="Created mathematics lessons, helped with homework and supported students."
+                  >
+                    Création de cours de mathématiques, aide aux devoirs et accompagnement des
+                    élèves.
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </section>
+        <section class="education-section shell">
+          <div class="section-heading">
+            <h2 data-en="Education">Formation</h2>
+          </div>
+
+          <div class="education-row">
+            <span data-en="Since September 2026">Depuis septembre 2026</span>
+            <div>
+              <h3 data-en="IIM engineering programme — Polytech Paris-Saclay">
+                Cycle ingénieur IIM — Polytech Paris-Saclay
+              </h3>
+              <p data-en="Computer Science and Mathematical Engineering (IIM).">
+                Spécialité Informatique et ingénierie mathématique (IIM).
+              </p>
+            </div>
+          </div>
+
+          <div class="education-row">
+            <span data-en="Until summer 2026">Jusqu’à l’été 2026</span>
+            <div>
+              <h3 data-en="Computer science — IUT d’Orsay, Université Paris-Saclay">
+                Informatique — IUT d’Orsay, Université Paris-Saclay
+              </h3>
+              <p
+                data-en="Data &amp; Artificial Intelligence track · Mathematics for Engineers option"
+              >
+                Parcours Data &amp; Intelligence artificielle · Option Mathématiques pour
+                l’ingénieur
+              </p>
+            </div>
+          </div>
+
+          <div class="education-row">
+            <span>2024</span>
+            <div>
+              <h3 data-en="General baccalaureate — Lycée de Villaroy">
+                Baccalauréat général — Lycée de Villaroy
+              </h3>
+              <p data-en="Mathematics · Computer science · Advanced mathematics">
+                Mathématiques · Numérique et sciences informatiques · Mathématiques expertes
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="method-section shell">
+          <div class="section-heading">
+            <h2 data-en="How I work">Ma façon de travailler</h2>
+          </div>
+          <div class="method-grid">
+            <article>
+              <span>01</span>
+              <h3 data-en="Understand the need">Analyser le besoin</h3>
+              <p data-en="Clarify expectations and define the project steps.">
+                Clarifier les attentes et définir les étapes du projet.
+              </p>
+            </article>
+
+            <article>
+              <span>02</span>
+              <h3 data-en="Develop and test">Développer et tester</h3>
+              <p data-en="Work incrementally, check results and document the code.">
+                Avancer progressivement, vérifier le résultat et documenter le code.
+              </p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <h3 data-en="Work with others">Travailler en équipe</h3>
+              <p data-en="Share information and explain technical decisions.">
+                Partager les informations et expliquer les choix techniques.
+              </p>
+            </article>
+          </div>
+          <div class="personal-row">
+            <div>
+              <span class="eyebrow" data-en="Languages">Langues</span>
+              <p>
+                <span class="translated-text" data-en="French · native">
+                  Français · langue maternelle
+                </span>
+                <br />
+                <span class="translated-text" data-en="English · B2">Anglais · B2</span>
+                <br />
+                <span class="translated-text" data-en="Spanish · B1">Espagnol · B1</span>
+              </p>
+            </div>
+            <div>
+              <span class="eyebrow" data-en="Beyond code">En dehors du code</span>
+              <p data-en="Mathematics, teaching, music, cinema, running and painting.">
+                Les mathématiques, la transmission, la musique, le cinéma, la course à pied et la
+                peinture.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-nudge shell">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2 data-en="Let’s discuss your project.">Parlons de votre projet.</h2>
+            <p data-en="You can reach me by email or on LinkedIn.">
+              Vous pouvez me joindre par email ou sur LinkedIn.
+            </p>
+          </div>
+          <a href="contact.html" class="round-link" aria-label="Contact">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#diagonal"></use>
+            </svg>
+          </a>
+        </section>
+      </main>
+
+      <!-- Pied de page et liens professionnels. -->
+      <footer class="site-footer shell">
+        <a class="brand" href="index.html" aria-label="Yassine Tahiri">
+          yt
+          <span>.</span>
+        </a>
+        <p data-en="Computing · Mathematics · Cybersecurity">
+          Informatique · Mathématiques · Cybersécurité
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/YassineT-git" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#diagonal"></use>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yassine-t/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#diagonal"></use>
+            </svg>
+          </a>
+          <button data-privacy data-en="Privacy">Confidentialité</button>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Yassine Tahiri</span>
+          <span data-en="Yassine Tahiri’s portfolio">Portfolio de Yassine Tahiri</span>
+          <a href="#top" data-en="Back to top ↑">Retour en haut ↑</a>
+        </div>
+      </footer>
+
+      <!-- Fenêtres : recherche rapide, apparence, confidentialité et galerie. -->
+      <dialog
+        id="command-dialog"
+        class="command-dialog"
+        aria-label="Accès rapide"
+        data-en-aria-label="Quick access"
+      >
+        <div class="command-header">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="assets/icons.svg#search"></use>
+          </svg>
+          <input
+            id="command-input"
+            type="search"
+            aria-label="Accès rapide"
+            placeholder="Rechercher une page ou un projet…"
+            autocomplete="off"
+            data-en-aria-label="Quick access"
+            data-en-placeholder="Search pages or projects…"
+          />
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div id="command-results" class="command-results">
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="accueil home"
+            href="index.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#arrow"></use>
+            </svg>
+            <span data-en="Home">Accueil</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="projets projects"
+            href="projets.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#code"></use>
+            </svg>
+            <span data-en="Projects">Projets</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="formation parcours experience journey education cybersécurité cybersecurity"
+            href="parcours.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#arrow"></use>
+            </svg>
+            <span data-en="Journey">Parcours</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="email contact"
+            href="contact.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#mail"></use>
+            </svg>
+            <span>Contact</span>
+            <small data-en="Quick access">Accès rapide</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Gestion de la CIUP CIUP management Java Swing UML"
+            href="ciup.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#code"></use>
+            </svg>
+            <span data-en="CIUP management">Gestion de la CIUP</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Jeu 2D en C++ 2D game in C++ C++ SDL2 POO jeu game"
+            href="jeu-2d.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#code"></use>
+            </svg>
+            <span data-en="2D game in C++">Jeu 2D en C++</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Serveur Linux sur Raspberry Pi Linux server on Raspberry Pi Linux SSH MariaDB Python"
+            href="raspberry.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#network"></use>
+            </svg>
+            <span data-en="Linux server on Raspberry Pi">Serveur Linux sur Raspberry Pi</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="Configuration d’un réseau Debian Debian network configuration Debian DNS DHCP SSH Wireshark"
+            href="reseau.html"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#network"></use>
+            </svg>
+            <span data-en="Debian network configuration">Configuration d’un réseau Debian</span>
+            <small data-en="Projects">Projets</small>
+          </a>
+          <a
+            class="command-result"
+            data-command-item
+            data-keywords="CV résumé resume curriculum vitae"
+            href="assets/CV_Yassine.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#download"></use>
+            </svg>
+            <span data-en="View résumé">Consulter le CV</span>
+            <small>PDF</small>
+          </a>
+          <p
+            class="command-empty"
+            id="command-empty"
+            hidden
+            data-en="No results. Try “Java”, “network” or “résumé”."
+          >
+            Aucun résultat. Essaie « Java », « réseau » ou « CV ».
+          </p>
+        </div>
+        <div class="command-footer">
+          <span data-en="↑ ↓ to navigate">↑ ↓ pour naviguer</span>
+          <span data-en="↵ to open">↵ pour ouvrir</span>
+          <span data-en="esc to close">esc pour fermer</span>
+        </div>
+      </dialog>
+      <dialog
+        id="theme-dialog"
+        class="small-dialog"
+        aria-label="Apparence"
+        data-en-aria-label="Appearance"
+      >
+        <div class="dialog-title">
+          <h2 data-en="Appearance">Apparence</h2>
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="theme-options">
+          <button data-set-theme="light" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#sun"></use>
+            </svg>
+            <span class="translated-text" data-en="Light">Clair</span>
+          </button>
+
+          <button data-set-theme="dark" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#moon"></use>
+            </svg>
+            <span class="translated-text" data-en="Dark">Sombre</span>
+          </button>
+
+          <button data-set-theme="system" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#globe"></use>
+            </svg>
+            <span class="translated-text" data-en="System">Système</span>
+          </button>
+        </div>
+      </dialog>
+      <dialog
+        id="privacy-dialog"
+        class="small-dialog"
+        aria-label="Confidentialité"
+        data-en-aria-label="Privacy"
+      >
+        <div class="dialog-title">
+          <h2 data-en="Simple, down to the data.">Simple, jusque dans les données.</h2>
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <p
+          data-en="This site uses no tracking tools. Theme, language, saved projects and the contact draft are stored only in your browser. You can clear them here. External links and your email application have their own privacy policies."
+        >
+          Ce site n’utilise aucun outil de suivi. Le thème, la langue, la sélection de projets et le
+          brouillon de contact sont stockés uniquement dans ton navigateur. Tu peux les effacer ici.
+          Les liens externes et ton application de messagerie ont leurs propres règles de
+          confidentialité.
+        </p>
+        <button class="button secondary" data-clear-local data-en="Clear my local data">
+          Effacer mes données locales
+        </button>
+      </dialog>
+      <dialog
+        id="gallery-dialog"
+        class="gallery-dialog"
+        aria-label="Aperçus du projet"
+        data-en-aria-label="Project visuals"
+      >
+        <div class="lightbox-header">
+          <span id="lightbox-count"></span>
+          <button
+            class="icon-button"
+            data-close-dialog
+            aria-label="Fermer"
+            data-en-aria-label="Close"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="assets/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="lightbox-content">
+          <button
+            class="icon-button"
+            data-gallery-prev
+            aria-label="Image précédente"
+            data-en-aria-label="Previous image"
+          >
+            ←
+          </button>
+          <img id="lightbox-image" alt="" />
+          <button
+            class="icon-button"
+            data-gallery-next
+            aria-label="Image suivante"
+            data-en-aria-label="Next image"
+          >
+            →
+          </button>
+        </div>
+        <p id="lightbox-caption"></p>
+      </dialog>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+    <div id="navigation-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <noscript>
+      <p class="shell">
+        Les pages et les projets sont accessibles. Activez JavaScript pour les filtres, la
+        traduction et les animations.
+      </p>
+    </noscript>
+  </body>
+</html>

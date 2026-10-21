@@ -6,6 +6,14 @@
 }
 
 /* Le contenu change, l'en-tête reste stable pour conserver les repères. */
+/* La capture animée laisse les boutons de la vraie page recevoir les clics. */
+::view-transition,
+::view-transition-group(*),
+::view-transition-image-pair(*),
+::view-transition-old(*),
+::view-transition-new(*) {
+  pointer-events: none;
+}
 main {
   view-transition-name: page;
 }

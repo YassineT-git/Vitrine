@@ -1847,3 +1847,11 @@ dialog::backdrop {
   opacity: 1;
   transform: translate(-50%, 0);
 }
+
+/* Traductions de fragments de texte au milieu d'un lien, d'un label ou d'un titre. */
+.translated-text {
+  display: contents;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
