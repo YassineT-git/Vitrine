@@ -1,0 +1,72 @@
+/* Version imprimée : conserver le contenu et retirer les interactions. */
+@media print {
+  .site-header,
+  .site-footer,
+  .contact-nudge,
+  .nav-actions,
+  .project-toolbar,
+  .results-toolbar,
+  .save-button,
+  .local-note,
+  .case-sidebar nav,
+  .next-project,
+  .project-source,
+  dialog,
+  .toast,
+  .reading-progress {
+    display: none !important;
+  }
+  .shell {
+    width: 100%;
+    max-width: none;
+  }
+  .hero,
+  .page-heading,
+  .detail-heading {
+    padding-top: 10px;
+  }
+  .hero-layout {
+    padding: 25px 0;
+  }
+  .hero h1 {
+    font-size: 65px;
+  }
+  .project-visual {
+    max-height: 260px;
+  }
+  .project-card {
+    break-inside: avoid;
+  }
+  .case-layout {
+    display: block;
+  }
+  .case-sidebar {
+    position: static;
+    display: none;
+  }
+  .case-content h2 {
+    font-size: 26px;
+  }
+  .case-content p {
+    font-size: 12px;
+  }
+  .case-gallery figure {
+    break-inside: avoid;
+  }
+  .contact-page {
+    padding-bottom: 0;
+  }
+  body {
+    color: #000;
+    background: #fff;
+  }
+  .about-teaser {
+    margin-top: 30px;
+  }
+  .project-grid {
+    gap: 25px;
+  }
+  .section-heading {
+    margin-top: 15px;
+  }
+}

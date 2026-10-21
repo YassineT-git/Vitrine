@@ -1,3 +1,36 @@
+# Portfolio — Yassine Tahiri
+
+Le portfolio actuel est publié sur **[yassinet-git.github.io/Vitrine](https://yassinet-git.github.io/Vitrine/)**.
+
+## Modifier le portfolio
+
+Les sources maintenues sont dans **[`portfolio-site/`](portfolio-site/)** :
+
+- [`src/data/profile.js`](portfolio-site/src/data/profile.js) : formation, coordonnées et expériences.
+- [`src/data/projects.js`](portfolio-site/src/data/projects.js) : projets et galeries.
+- [`src/data/translations.js`](portfolio-site/src/data/translations.js) : textes français et anglais.
+- [`src/styles/motion.css`](portfolio-site/src/styles/motion.css) : effets et transitions.
+- [Guide complet](portfolio-site/README.md) : structure, commandes et exemples de modification.
+
+```bash
+cd portfolio-site
+npm ci
+npm run build
+npm run check
+npm start
+```
+
+## Publication automatique
+
+Le workflow [Publication du portfolio](.github/workflows/portfolio-pages.yml) s’exécute à chaque modification du portfolio sur `main`. Il reconstruit le site, vérifie les pages puis publie `portfolio-site/dist/` avec GitHub Pages. Il peut aussi être lancé manuellement depuis l’onglet **Actions**.
+
+Les anciennes adresses `Portfolio/index.html`, `Portfolio/projets.html` et `Portfolio/competences.html` redirigent vers le portfolio actuel.
+
+Les dossiers historiques `Portfolio/`, `Publications/`, `assets/` et `open-data-university-project-main/` sont conservés pour référence et pour la séparation future du site d’enseignement. Ils ne sont pas inclus dans la publication du nouveau portfolio.
+
+<details>
+<summary>Présentation historique de la vitrine</summary>
+
 # Vitrine Professionnelle - Portfolio & Enseignement
 
 Bienvenue sur le dépôt de ma vitrine personnelle. Ce site web a été conçu pour centraliser mon parcours, mes compétences techniques en informatique, mes travaux de recherche en mathématiques, ainsi que mon activité de professeur particulier.
@@ -64,3 +97,5 @@ git clone https://github.com/YassineT-git/Vitrine.git
 
 2. **Lancer le site :**
 Ouvrir `index.html` dans un navigateur.
+
+</details>

@@ -1,0 +1,67 @@
+name: Publication du portfolio
+
+# Une modification du portfolio publie la nouvelle version sur GitHub Pages.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portfolio-site/**"
+      - ".github/workflows/portfolio-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Ne jamais lancer deux publications en même temps.
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Construire et vérifier le portfolio
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    defaults:
+      run:
+        working-directory: portfolio-site
+    steps:
+      - name: Récupérer les sources
+        uses: actions/checkout@v7
+      - name: Préparer Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: portfolio-site/package-lock.json
+      - name: Installer les outils de développement
+        run: npm ci
+      - name: Générer les pages
+        run: npm run build
+      - name: Vérifier les textes, les liens et les sources
+        run: npm run check
+      - name: Préparer les anciennes adresses et GitHub Pages
+        run: node scripts/prepare-github-pages.mjs
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Préparer le site à publier
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: portfolio-site/dist
+
+  deploy:
+    name: Publier sur GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publier le portfolio
+        id: deployment
+        uses: actions/deploy-pages@v4
