@@ -1496,24 +1496,24 @@ kbd {
   opacity: 1;
 }
 .education-logo img {
-  width: 118px;
-  height: 42px;
+  width: 96px;
+  height: 34px;
   object-fit: contain;
   object-position: left center;
   filter: grayscale(1) brightness(0);
 }
 .education-logo--iut img {
-  width: 132px;
+  width: 108px;
 }
 .education-logo--university img {
-  width: 92px;
+  width: 78px;
 }
 .education-logo--lycee {
   mix-blend-mode: multiply;
 }
 .education-logo--lycee img {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   filter: grayscale(1) contrast(1.2);
 }
 /* En sombre, les tracés deviennent blancs et le fond du JPEG se fond dans la page. */
