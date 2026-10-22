@@ -69,4 +69,20 @@
   .section-heading {
     margin-top: 15px;
   }
+  /* Les logos restent noirs sur le papier, même depuis le thème sombre. */
+  .education-logos {
+    background: #fff;
+  }
+  :root .education-logo img,
+  :root[data-theme="dark"] .education-logo img {
+    filter: grayscale(1) brightness(0);
+  }
+  :root .education-logo--lycee img,
+  :root[data-theme="dark"] .education-logo--lycee img {
+    filter: grayscale(1) contrast(1.2);
+  }
+  :root .education-logo--lycee,
+  :root[data-theme="dark"] .education-logo--lycee {
+    mix-blend-mode: multiply;
+  }
 }
