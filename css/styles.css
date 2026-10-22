@@ -42,8 +42,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.55;
 }
@@ -1466,10 +1465,66 @@ kbd {
   border-top: 1px solid var(--line);
   padding: 25px 0;
 }
-.education-row > span {
+.education-meta {
+  min-width: 0;
+  padding-top: 4px;
+}
+.education-date {
+  display: block;
   font-size: 11px;
   color: var(--muted);
-  padding-top: 4px;
+}
+/* Logos sous la date : SVG nets à toute taille, rendu monochrome par le CSS. */
+.education-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 14px;
+  background: var(--bg);
+}
+.education-logo {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 44px;
+  opacity: 0.82;
+  transition: opacity 200ms;
+}
+.education-logo:hover,
+.education-logo:focus-visible {
+  opacity: 1;
+}
+.education-logo img {
+  width: 118px;
+  height: 42px;
+  object-fit: contain;
+  object-position: left center;
+  filter: grayscale(1) brightness(0);
+}
+.education-logo--iut img {
+  width: 132px;
+}
+.education-logo--university img {
+  width: 92px;
+}
+.education-logo--lycee {
+  mix-blend-mode: multiply;
+}
+.education-logo--lycee img {
+  width: 64px;
+  height: 64px;
+  filter: grayscale(1) contrast(1.2);
+}
+/* En sombre, les tracés deviennent blancs et le fond du JPEG se fond dans la page. */
+:root[data-theme="dark"] .education-logo img {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+:root[data-theme="dark"] .education-logo--lycee img {
+  filter: grayscale(1) contrast(1.2) invert(1);
+}
+:root[data-theme="dark"] .education-logo--lycee {
+  mix-blend-mode: screen;
 }
 .education-row h3 {
   font-size: 22px;
